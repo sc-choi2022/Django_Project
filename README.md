@@ -123,3 +123,27 @@ signup을 만들기 위해 index 관련 url, views, templates 코드를 작성�
 
 settings.py 오류로 clushed error 발생하여 setting.py 새로 작성했다.
 
+
+
+## 0511
+
+login 구현을 시도했다.
+
+* accounts/urls.py 생성 및 작성
+* login.html 작성
+* views.py에 login을 작성(진행중)
+
+기존 username만이 아니라 email, phonenumber 중 하나와 password로도 로그인이 가능하도록 하는 것이 목표이다.
+
+방법 1
+
+AuthenticationForm을 수정한다.
+
+방법 2
+
+is_valid와 auth_login을 활용하기 위해 email, phonenumber를 username에 연결할 수 있게 수정한다.
+
+방법 3
+
+is_valid와 auth_login을 사용하지 않는 다른 방법을 구상한다.
+
