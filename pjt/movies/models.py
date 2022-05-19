@@ -17,6 +17,10 @@ class Director(models.Model):
     name = models.CharField(max_length=50)
 
 
+class OTT(models.Model):
+    name = models.CharField(max_length=50)
+
+
 class Movie(models.Model):
     title = models.CharField(max_length=100)
     orginal_title = models.CharField(max_length=100)
@@ -28,6 +32,7 @@ class Movie(models.Model):
     genres = models.ManyToManyField(Genre, related_name='movies')
     actors = models.ManyToManyField(Actor, related_name='movies')
     directors = models.ManyToManyField(Director, related_name='movies')
+    otts =  models.ManyToManyField(OTT, related_name='movies')
     video = models.CharField(max_length=100)
     vote_average = models.FloatField()
     vote_count = models.IntegerField()
