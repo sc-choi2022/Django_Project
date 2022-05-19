@@ -11,7 +11,7 @@ def watch_providers():
         'language': 'ko',
     }
     response = requests.get(BASE_URL+path, params=params)
-    data = response.json()
+    data = response.json()['results']['KR']
 
     pprint(data)
 
