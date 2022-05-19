@@ -13,6 +13,6 @@ def credit():
     response = requests.get(BASE_URL+path, params=params)
     data = response.json()
 
-    pprint(data)
+    print(data)
 
 credit()
