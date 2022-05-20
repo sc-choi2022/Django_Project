@@ -1,12 +1,15 @@
 import requests
 from pprint import pprint
-
+from dotenv import load_dotenv
+import os
+load_dotenv()
+API_KEY = os.environ.get('API_KEY')
 
 def popular():
     BASE_URL = 'https://api.themoviedb.org/3'
     path = '/movie/popular'
     params = {
-        'api_key': 'fe2db36141a69429c6342aba799b9367',
+        'api_key': API_KEY,
         'region': 'KR',
         'language': 'ko',
     }

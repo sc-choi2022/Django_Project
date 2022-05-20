@@ -2,12 +2,16 @@ from pprint import pprint
 import requests
 from django.shortcuts import render
 from movies.models import Movie, Genre, Actor
+from dotenv import load_dotenv
+import os
+load_dotenv()
+API_KEY = os.environ.get('API_KEY')
 
 def movie(request):
     BASE_URL = 'https://api.themoviedb.org/3'
     path = '/movie/popular'
     params = {
-        'api_key': 'fe2db36141a69429c6342aba799b9367',
+        'api_key': API_KEY,
         'language': 'ko',
         'page': 17,
     }
@@ -36,7 +40,7 @@ def movie(request):
         id = d['id']
         path1 = '/movie/' + str(id)
         params1 = {
-            'api_key': 'fe2db36141a69429c6342aba799b9367',
+            'api_key': API_KEY,
             'language': 'ko',
             'append_to_response': 'releases',
         }
@@ -50,7 +54,7 @@ def movie(request):
                 break
         path2 = path1 + '/videos'
         params2 = {
-            'api_key': 'fe2db36141a69429c6342aba799b9367',
+            'api_key': API_KEY,
             'language': 'ko',
         }    
         response2 = requests.get(BASE_URL+path2, params=params2)  
@@ -65,7 +69,7 @@ def movie(request):
             continue
         path3 = path1 + '/credits'
         params3 = {
-            'api_key': 'fe2db36141a69429c6342aba799b9367',
+            'api_key': API_KEY,
             'language': 'ko',
         }
         response3 = requests.get(BASE_URL+path3, params=params3)
