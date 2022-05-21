@@ -1,4 +1,3 @@
-from pprint import pprint
 import requests
 from django.shortcuts import render
 from movies.models import Movie, Genre, Actor
