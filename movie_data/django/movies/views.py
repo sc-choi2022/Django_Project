@@ -14,7 +14,7 @@ def movie(request):
     params = {
         'api_key': API_KEY,
         'language': 'ko',
-        'page': 4,
+        'page': 1,
     }
     response = requests.get(BASE_URL+path, params=params)
     data = response.json()['results']
@@ -29,6 +29,7 @@ def movie(request):
         response1 = requests.get(BASE_URL+path1, params=params1)
         data1 = response1.json()
         movie = Movie()
+        movie.pk = id
         movie.title = data1['title']
         movie.orginal_title = data1['original_title']
         if data1['overview'] == '':
@@ -122,7 +123,8 @@ def movie(request):
 
 def movieid(request):
     BASE_URL = 'https://api.themoviedb.org/3'
-    path1 = '/movie/' + str(278)
+    id = str(284052)
+    path1 = '/movie/' + id
     params1 = {
         'api_key': API_KEY,
         'language': 'ko',
@@ -131,6 +133,7 @@ def movieid(request):
     response1 = requests.get(BASE_URL+path1, params=params1)
     data1 = response1.json()
     movie = Movie()
+    movie.pk = id
     movie.title = data1['title']
     movie.orginal_title = data1['original_title']
     if data1['overview'] == '':
