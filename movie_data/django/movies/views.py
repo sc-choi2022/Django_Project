@@ -134,7 +134,7 @@ def movie(request):
 
 def movieid(request):
     BASE_URL = 'https://api.themoviedb.org/3'
-    id = str(155)
+    id = str(13528)
     path1 = '/movie/' + id
     params1 = {
         'api_key': API_KEY,
