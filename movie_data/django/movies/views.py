@@ -14,7 +14,7 @@ def movie(request):
     params = {
         'api_key': API_KEY,
         'language': 'ko',
-        'page': 1,
+        'page': 20,
     }
     response = requests.get(BASE_URL+path, params=params)
     data = response.json()['results']
@@ -69,10 +69,19 @@ def movie(request):
         certifi = data1['releases']['countries']
         for cer in certifi:
             if cer['iso_3166_1'] == 'KR' and cer['certification'] != '':
+                if cer['certification'] == '전체관람가':
+                    cer['certification'] = 'ALL'
+                if cer['certification'] == '12세 이상 관람가' or cer['certification'] == '12세 관람가':
+                    cer['certification'] = '12'
+                if cer['certification'] == '청소년 관람불가' or cer['certification'] == '19':
+                    cer['certification'] = '18'                
                 c1 = Certification(pk=order_certi[cer['certification']], name=cer['certification'])
                 c1.save()
                 c1.movies.add(movie)
                 break
+        else:
+            movie.delete()
+            continue        
 
         path3 = path1 + '/watch/providers'
         params3 = {
@@ -177,7 +186,9 @@ def movieid(request):
             c1.save()
             c1.movies.add(movie)
             break
-
+    else:
+        movie.delete()
+        return
     path3 = path1 + '/watch/providers'
     params3 = {
         'api_key': API_KEY,
