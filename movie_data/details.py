@@ -7,7 +7,7 @@ API_KEY = os.environ.get('API_KEY')
 
 def details():
     BASE_URL = 'https://api.themoviedb.org/3'
-    path = '/movie/496243'
+    path = '/movie/524434'
     params = {
         'api_key': API_KEY,
         'region': 'KR',

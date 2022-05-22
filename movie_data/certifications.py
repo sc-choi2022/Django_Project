@@ -16,6 +16,6 @@ def certification():
     response = requests.get(BASE_URL+path, params=params)
     data = response.json()
 
-    pprint(data)
+    print(data['certifications'])
 
 certification()
