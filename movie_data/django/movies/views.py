@@ -73,6 +73,8 @@ def movie(request):
                     cer['certification'] = 'ALL'
                 if cer['certification'] == '12세 이상 관람가' or cer['certification'] == '12세 관람가':
                     cer['certification'] = '12'
+                if cer['certification'] == '15세 이상 관람가':
+                    cer['certification'] = '15'
                 if cer['certification'] == '청소년 관람불가' or cer['certification'] == '19':
                     cer['certification'] = '18'                
                 c1 = Certification(pk=order_certi[cer['certification']], name=cer['certification'])
@@ -132,7 +134,7 @@ def movie(request):
 
 def movieid(request):
     BASE_URL = 'https://api.themoviedb.org/3'
-    id = str(299536)
+    id = str(155)
     path1 = '/movie/' + id
     params1 = {
         'api_key': API_KEY,
@@ -182,6 +184,14 @@ def movieid(request):
     certifi = data1['releases']['countries']
     for cer in certifi:
         if cer['iso_3166_1'] == 'KR' and cer['certification'] != '':
+            if cer['certification'] == '전체관람가':
+                    cer['certification'] = 'ALL'
+            if cer['certification'] == '12세 이상 관람가' or cer['certification'] == '12세 관람가':
+                cer['certification'] = '12'
+            if cer['certification'] == '15세 이상 관람가':
+                cer['certification'] = '15'
+            if cer['certification'] == '청소년 관람불가' or cer['certification'] == '19':
+                cer['certification'] = '18'
             c1 = Certification(pk=order_certi[cer['certification']], name=cer['certification'])
             c1.save()
             c1.movies.add(movie)
