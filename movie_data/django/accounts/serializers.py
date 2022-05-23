@@ -3,6 +3,8 @@ from django.contrib.auth import get_user_model
 from community.models import Article
 from movies.models import Movie
 
+User = get_user_model()
+
 class ProfileSerializer(serializers.ModelSerializer):
 
     class MovieSerializer(serializers.ModelSerializer):
@@ -23,6 +25,7 @@ class ProfileSerializer(serializers.ModelSerializer):
 
     like_articles = ArticleSerializer(many=True, read_only=True)
 
+    
     class Meta:
-        model = get_user_model()
+        model = User
         fields = ('id', 'username', 'movies_mymovie', 'movies_wish', 'like_articles',)
