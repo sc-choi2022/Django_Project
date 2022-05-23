@@ -161,10 +161,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'accounts.User'
 
-# CORS_ALLOWED_ORIGINS = [
-#     # Vue LocalHost
-#     'http://localhost:8080',
-# ]
-
-# 모두에게 교차출처 허용 (*)
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOWED_ORIGINS = [
+    # Vue LocalHost
+    'http://localhost:8080',
+]
