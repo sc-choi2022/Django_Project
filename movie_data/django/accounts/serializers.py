@@ -18,22 +18,31 @@ class ProfileSerializer(serializers.ModelSerializer):
         fields = ('pk', 'username', 'like_articles', 'movies', 'users_mymovie', '')
 
 
-class MovieProfileSerializer(serializers.ModelSerializer):
+# class MovieProfileSerializer(serializers.ModelSerializer):
 
-    class ProfileSerializer(serializers.ModelSerializer):
+#     class ProfileSerializer(serializers.ModelSerializer):
 
-        class Meta:
-            model = get_user_model()
-            fields = ('pk', 'username',)
+#         class Meta:
+#             model = get_user_model()
+#             fields = ('pk', 'username',)
 
-    users_mymovie = ProfileSerializer(read_only=True, many=True)
-    users_wish = ProfileSerializer(read_only=True, many=True)
+#     users_mymovie = ProfileSerializer(read_only=True, many=True)
+#     users_wish = ProfileSerializer(read_only=True, many=True)
 
-    class Meta:
-        model = Movie
-        fields = ('users_mymovie', 'users_wish', 'username',)
+#     class Meta:
+#         model = Movie
+#         fields = ('users_mymovie', 'users_wish', 'username',)
 
 
+
+# class ProfileSerializer(serializers.ModelSerializer):
+
+    
+
+    
+#     class Meta:
+#         model = get_user_model()
+#         fields = ('pk', 'username',)
 
 
 
