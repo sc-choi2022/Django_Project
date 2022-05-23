@@ -6,4 +6,5 @@ urlpatterns = [
     # path('', views.movie, name='movie'),
     path('id/', views.movieid, name='movieid'),
     path('', views.index, name='index'),
+    path('movie/<int:movie_pk>/', views.movie_detail, name='movie_detail'),
 ]

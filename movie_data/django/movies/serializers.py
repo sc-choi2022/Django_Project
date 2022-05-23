@@ -33,12 +33,22 @@ class MovieSerializer(serializers.ModelSerializer):
     class CertificationSerializer(serializers.ModelSerializer):
 
         class Meta:
+
             model = Certification
             fields = ('name',)
+
+    certifications = CertificationSerializer(many=True, read_only=True)
+
+
+    class OTTSerializer(serializers.ModelSerializer):
+
+        class Meta:
+            model = OTT
+            fields = ('name',)
         
-    certification = CertificationSerializer(many=True, read_only=True)
+    otts = OTTSerializer(many=True, read_only=True)
 
-
+    
     class Meta:
         model = Movie
         exclude = ('orginal_title',)
@@ -87,10 +97,13 @@ class MovieMainListSerializer(serializers.ModelSerializer):
 
         class Meta:
             model = Keyword
-            fields = ('name',)
+            fields = ('id', 'name',)
         
     keywords = KeywordSerializer(many=True, read_only=True)
+    
 
     class Meta:
         model = Movie
         fields = ('id', 'poster_path', 'title', 'video', 'keywords',)
+
+

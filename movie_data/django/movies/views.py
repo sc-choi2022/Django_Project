@@ -8,7 +8,7 @@ import random
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
-from movies.serializers import MovieMainListSerializer
+from movies.serializers import MovieMainListSerializer, MovieSerializer
 load_dotenv()
 API_KEY = os.environ.get('API_KEY')
 
@@ -262,5 +262,10 @@ def index(request):
     # 메인페이지
     # 키워드 정하기 리스트 만들어서 랜덤으로 하나 골라
     # 그 중 영화 랜덤 10개
+    # keyword id 값 넣어주는거 고민해보기
 
-    
+@api_view(['GET'])
+def movie_detail(request, movie_pk):
+    movie = get_object_or_404(Movie, pk=movie_pk)
+    serializer = MovieSerializer(movie)
+    return Response(serializer.data)
