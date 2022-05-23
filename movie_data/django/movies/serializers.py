@@ -51,12 +51,11 @@ class MovieSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = Movie
-        exclude = ('orginal_title',)
+        exclude = ('original_title',)
 
 
 # 원본
 class MovieListSerializer(serializers.ModelSerializer):
-
 
     class OTTSerializer(serializers.ModelSerializer):
 

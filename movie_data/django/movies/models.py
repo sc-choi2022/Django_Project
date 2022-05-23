@@ -2,7 +2,7 @@ from django.db import models
 
 class Movie(models.Model):
     title = models.CharField(max_length=100)
-    orginal_title = models.CharField(max_length=100)
+    original_title = models.CharField(max_length=100)
     overview = models.TextField()
     poster_path = models.CharField(max_length=200)
     release_date = models.DateTimeField()
