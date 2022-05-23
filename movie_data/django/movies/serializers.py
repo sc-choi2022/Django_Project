@@ -48,6 +48,9 @@ class MovieSerializer(serializers.ModelSerializer):
         
     otts = OTTSerializer(many=True, read_only=True)
 
+    # vue로 내일 볼 것 안되면 class User 만들어서 바꿔줄 것
+    users_mymovie = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
+    users_wish = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
     
     class Meta:
         model = Movie

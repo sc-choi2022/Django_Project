@@ -1,4 +1,5 @@
 from django.db import models
+from django.conf import settings
 
 class Movie(models.Model):
     title = models.CharField(max_length=100)
@@ -10,6 +11,8 @@ class Movie(models.Model):
     video = models.CharField(max_length=100)
     vote_average = models.FloatField()
     vote_count = models.IntegerField()
+    users_mymovie = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='movies_mymovie')
+    users_wish = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='movies_wish')
 
 class Genre(models.Model):
     name = models.CharField(max_length=50)
