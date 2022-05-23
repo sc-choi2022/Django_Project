@@ -35,7 +35,21 @@ INSTALLED_APPS = [
     'movies',
     'django_extensions',
     'rest_framework',
+    'rest_framework.authtoken',
+
+    # DRF auth
+    'dj_rest_auth',  # signup 제외 auth 관련 담당
+    'dj_rest_auth.registration',  # signup 담당
+
+    # django allauth signup 담당을 위해 필요 
+    'allauth', 
+    'allauth.account',
+    'allauth.socialaccount',
+
     'corsheaders',
+
+    # native apps
+    'django.contrib.sites',  # dj-rest-auth signup 필요
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -43,6 +57,21 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+
+# django.contrib.sites에서 등록 필요
+SITE_ID = 1
+
+# DRF 인증 관련 설정
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+
+        # 인증된 사용자만 모든일이 가능 / 비인증 사용자는 모두 401 Unauthorized
+        'rest_framework.permissions.IsAuthenticated'
+    ]
+}
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
@@ -137,4 +166,5 @@ AUTH_USER_MODEL = 'accounts.User'
 #     'http://localhost:8080',
 # ]
 
+# 모두에게 교차출처 허용 (*)
 CORS_ALLOW_ALL_ORIGINS = True
