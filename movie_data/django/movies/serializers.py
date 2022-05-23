@@ -44,7 +44,7 @@ class MovieSerializer(serializers.ModelSerializer):
         exclude = ('orginal_title',)
 
 
-
+# 원본
 class MovieListSerializer(serializers.ModelSerializer):
 
 
@@ -79,3 +79,18 @@ class MovieListSerializer(serializers.ModelSerializer):
         fields = ('id', 'poster_path', 'title', 'video', 'otts', 'directors', 'keywords',)
 
 
+
+class MovieMainListSerializer(serializers.ModelSerializer):
+
+
+    class KeywordSerializer(serializers.ModelSerializer):
+
+        class Meta:
+            model = Keyword
+            fields = ('name',)
+        
+    keywords = KeywordSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = Movie
+        fields = ('id', 'poster_path', 'title', 'video', 'keywords',)

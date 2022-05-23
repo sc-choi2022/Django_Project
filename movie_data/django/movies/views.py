@@ -1,8 +1,14 @@
 import requests
-from django.shortcuts import render
+from django.shortcuts import render, get_list_or_404, get_object_or_404
 from movies.models import Movie, Genre, Certification, OTT, Keyword, Actor, Director
 from dotenv import load_dotenv
 import os
+import random
+
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+
+from movies.serializers import MovieMainListSerializer
 load_dotenv()
 API_KEY = os.environ.get('API_KEY')
 
@@ -71,7 +77,7 @@ def movie(request):
             if cer['iso_3166_1'] == 'KR' and cer['certification'] != '':
                 if cer['certification'] == '전체관람가':
                     cer['certification'] = 'ALL'
-                if cer['certification'] == '12세 이상 관람가' or cer['certification'] == '12세 관람가':
+                if cer['certification'] == '12세 이상 관람가' or cer['certification'] == '12세 관람가' or cer['certification'] == '12세이상관람가':
                     cer['certification'] = '12'
                 if cer['certification'] == '15세 이상 관람가':
                     cer['certification'] = '15'
@@ -134,7 +140,7 @@ def movie(request):
 
 def movieid(request):
     BASE_URL = 'https://api.themoviedb.org/3'
-    id = str(13528)
+    id = str('77117')
     path1 = '/movie/' + id
     params1 = {
         'api_key': API_KEY,
@@ -186,7 +192,7 @@ def movieid(request):
         if cer['iso_3166_1'] == 'KR' and cer['certification'] != '':
             if cer['certification'] == '전체관람가':
                     cer['certification'] = 'ALL'
-            if cer['certification'] == '12세 이상 관람가' or cer['certification'] == '12세 관람가':
+            if cer['certification'] == '12세 이상 관람가' or cer['certification'] == '12세 관람가' or cer['certification'] == '12세이상관람가':
                 cer['certification'] = '12'
             if cer['certification'] == '15세 이상 관람가':
                 cer['certification'] = '15'
@@ -245,3 +251,16 @@ def movieid(request):
             d1.movies.add(movie)
 
     return render(request, 'movies/id.html')
+
+@api_view(['GET'])
+def index(request):
+    keyword_list = ['2343', '9840', '180547', '18035', '12565','4344']
+    keyword = random.choice(keyword_list)
+    movies = Movie.objects.filter(keywords=keyword).order_by('?')[:10]    
+    serializer = MovieMainListSerializer(movies,many=True)  
+    return Response(serializer.data)
+    # 메인페이지
+    # 키워드 정하기 리스트 만들어서 랜덤으로 하나 골라
+    # 그 중 영화 랜덤 10개
+
+    
