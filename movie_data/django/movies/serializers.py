@@ -106,3 +106,18 @@ class MovieMainListSerializer(serializers.ModelSerializer):
         fields = ('id', 'poster_path', 'title', 'video', 'keywords',)
 
 
+class MovieOttListSerializer(serializers.ModelSerializer):
+
+
+    class OttSerializer(serializers.ModelSerializer):
+
+        class Meta:
+            model = OTT
+            fields = ('id', 'name',)
+        
+    otts = OttSerializer(many=True, read_only=True)
+    
+
+    class Meta:
+        model = Movie
+        fields = ('id', 'poster_path', 'title', 'video', 'otts',)

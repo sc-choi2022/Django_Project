@@ -259,13 +259,32 @@ def index(request):
     movies = Movie.objects.filter(keywords=keyword).order_by('?')[:10]    
     serializer = MovieMainListSerializer(movies,many=True)  
     return Response(serializer.data)
-    # 메인페이지
-    # 키워드 정하기 리스트 만들어서 랜덤으로 하나 골라
-    # 그 중 영화 랜덤 10개
-    # keyword id 값 넣어주는거 고민해보기
+    # random으로 뽑힌 keyword id 값 넣어주는거 고민해보기
+
 
 @api_view(['GET'])
 def movie_detail(request, movie_pk):
     movie = get_object_or_404(Movie, pk=movie_pk)
     serializer = MovieSerializer(movie)
+    return Response(serializer.data)
+
+
+@api_view(['GET'])
+def recommend_otts(request, ott_id):
+    movies = Movie.objects.filter(otts=str(ott_id)).order_by('?')[:5]    
+    serializer = MovieMainListSerializer(movies,many=True)  
+    return Response(serializer.data)
+
+
+@api_view(['GET'])
+def recommend_directors(request, director_id):
+    movies = Movie.objects.filter(directors=str(director_id)).order_by('?')[:5]  
+    serializer = MovieMainListSerializer(movies,many=True)  
+    return Response(serializer.data)
+
+
+@api_view(['GET'])
+def recommend_keywords(request, keyword_id):
+    movies = Movie.objects.filter(keywords=str(keyword_id)).order_by('?')[:5]  
+    serializer = MovieMainListSerializer(movies,many=True)  
     return Response(serializer.data)
