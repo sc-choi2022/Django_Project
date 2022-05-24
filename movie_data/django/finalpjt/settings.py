@@ -69,7 +69,7 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
 
         # 인증된 사용자만 모든일이 가능 / 비인증 사용자는 모두 401 Unauthorized
-        'rest_framework.permissions.IsAuthenticated'
+        'rest_framework.permissions.AllowAny'
     ]
 }
 
@@ -165,3 +165,5 @@ CORS_ALLOWED_ORIGINS = [
     # Vue LocalHost
     'http://localhost:8080',
 ]
+
+# CORS_ALLOWED_ALL_ORIGINS = True

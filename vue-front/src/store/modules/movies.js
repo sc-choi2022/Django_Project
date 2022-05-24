@@ -28,7 +28,7 @@ export default {
   },
 
   actions: {
-    fetchMovies({ commit, getters }) {
+    fetchMovies({ commit }) {
       /* 게시글 목록 받아오기
       GET: articles URL (token)
         성공하면
@@ -39,7 +39,7 @@ export default {
       axios({
         url: drf.movies.movies(),
         method: 'get',
-        headers: getters.authHeader,
+        // headers: getters.authHeader,
       })
         .then(res => commit('SET_MOVIES', res.data))
         .catch(err => console.error(err.response))
