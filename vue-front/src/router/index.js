@@ -1,20 +1,22 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-// import store from '../store'
+import store from '../store'
 
 import MovieListView from '@/views/MovieListView.vue'
 
 import ArticleListView from '@/views/ArticleListView.vue'
 import ArticleNewView from '@/views/ArticleNewView'
+import ArticleDetailView from '@/views/ArticleDetailView.vue'
+import ArticleEditView from '@/views/ArticleEditView'
 
 import LoginView from '@/views/LoginView.vue'
 import LogoutView from '@/views/LogoutView.vue'
 import SignupView from '@/views/SignupView.vue'
+import ProfileView from '@/views/ProfileView.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
-  // 인증 필요 없음
   {
     path: '/login',
     name: 'login',
@@ -26,6 +28,16 @@ const routes = [
     component: SignupView
   },
   {
+    path: '/logout',
+    name: 'logout',
+    component: LogoutView
+  },
+  {
+    path: '/profile/:username',  // /profile/neo
+    name: 'profile',
+    component: ProfileView,
+  },
+  {
     path: '/',  // Home
     name: 'movies',
     component: MovieListView
@@ -35,27 +47,21 @@ const routes = [
     name: 'articles',
     component: ArticleListView
   },
-  // 인증 필요함
-  {
-    path: '/logout',
-    name: 'logout',
-    component: LogoutView
-  },
   {
     path: '/community/articles/new',
     name: 'articleNew',
     component: ArticleNewView
   },
-  // {
-  //   path: '/articles/:articlePk',
-  //   name: 'article',
-  //   component: ArticleDetailView
-  // },
-  // {
-  //   path: '/articles/:articlePk/edit',
-  //   name: 'articleEdit',
-  //   component: ArticleEditView
-  // },
+  {
+    path: '/community/articles/:articlePk',
+    name: 'article',
+    component: ArticleDetailView
+  },
+  {
+    path: '/community/articles/:articlePk/edit',
+    name: 'articleEdit',
+    component: ArticleEditView
+  },
 ]
 
 const router = new VueRouter({
@@ -64,25 +70,29 @@ const router = new VueRouter({
   routes
 })
 
-// router.beforeEach((to, from, next) => {
-//   // 로그인 여부 확인 (Vuex 사용 시)
-//   const { isLoggedIn } = store.getters
+router.beforeEach((to, from, next) => {
+  // 로그인 여부 확인 (Vuex 사용 시)
+  const { isLoggedIn } = store.getters
 
-//   // Auth가 필요한 route의 name
-//   const noAuthPages = ['articleNew']
+  // Auth가 필요없는 route의 name
+  const noAuthPages = ['login', 'signup', 'movies', 'articles']
 
-//   // 현재 이동하고자 하는 페이지가 Auth가 필요한가?
-//   const isAuthRequired = !noAuthPages.includes(to.name)
+  // 현재 이동하고자 하는 페이지가 Auth가 필요한가?
+  const isAuthRequired = !noAuthPages.includes(to.name)
 
-//   // Auth가 필요한데, 로그인되어 있지 않다면?
-//   if (isAuthRequired && !isLoggedIn) {
-//     alert('Require Login. Redirecting..')
-//     // 로그인 페이지로 이동
-//     next({ name: 'login' })
-//   } else {
-//     // 원래 이동하려던 곳으로 이동
-//     next()
-//   }
-// })
+  // Auth가 필요한데, 로그인되어 있지 않다면?
+  if (isAuthRequired && !isLoggedIn) {
+    alert('Require Login. Redirecting..')
+    // 로그인 페이지로 이동
+    next({ name: 'login' })
+  } else {
+    // 원래 이동하려던 곳으로 이동
+    next()
+  }
+
+  // if (!isAuthRequired && isLoggedIn) {
+  //   next({ name: 'movies' })
+  // }
+})
 
 export default router

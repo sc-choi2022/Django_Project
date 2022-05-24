@@ -3,6 +3,7 @@ const HOST = 'http://localhost:8000/api/v1/'
 const ACCOUNTS = 'accounts/'
 const MOVIES = 'movies/'
 const ARTICLES = 'community/'
+const COMMENTS = 'comments/'
 
 export default {
   accounts: {
@@ -12,7 +13,7 @@ export default {
     // Token 으로 현재 user 판단
     currentUserInfo: () => HOST + ACCOUNTS + 'user/',
     // username으로 프로필 제공
-    // profile: username => HOST + ACCOUNTS + 'profile/' + username,
+    profile: username => HOST + ACCOUNTS + 'profile/' + username,
   },
   movies: {
     movies: () => HOST + MOVIES,
@@ -21,10 +22,10 @@ export default {
     // /articles/
     articles: () => HOST + ARTICLES,
     // /articles/1/
-    // article: articlePk => HOST + ARTICLES + `${articlePk}/`,
-    // likeArticle: articlePk => HOST + ARTICLES + `${articlePk}/` + 'like/',
-    // comments: articlePk => HOST + ARTICLES + `${articlePk}/` + COMMENTS,
-    // comment: (articlePk, commentPk) =>
-    //   HOST + ARTICLES + `${articlePk}/` + COMMENTS + `${commentPk}/`,
+    article: articlePk => HOST + ARTICLES + `${articlePk}/`,
+    likeArticle: articlePk => HOST + ARTICLES + `${articlePk}/` + 'like/',
+    comments: articlePk => HOST + ARTICLES + `${articlePk}/` + COMMENTS,
+    comment: (articlePk, commentPk) =>
+      HOST + ARTICLES + `${articlePk}/` + COMMENTS + `${commentPk}/`,
   },
 }

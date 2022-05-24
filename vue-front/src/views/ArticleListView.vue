@@ -1,23 +1,25 @@
 <template>
   <div>
     <h1>Community</h1>
+        <router-link :to="{ name: 'articleNew' }" v-if="isLoggedIn">
+          <button>New</button>
+        </router-link>
     <ul>
       <li v-for="article in articles" :key="article.pk">
         <!-- 작성자 -->
-        {{ article.user.username }}
-        {{ article.title }}
-        {{ article.content }}
-        {{ article.movie_title }}
+        username: {{ article.user.username }}  |
+        title: {{ article.title }}  |
+        movie_title: {{ article.movie_title }} 
 
         <!-- 글 이동 링크 (제목) -->
-        <!-- <router-link 
+        <router-link 
           :to="{ name: 'article', params: {articlePk: article.pk} }">
           {{ article.title }}
-        </router-link> -->
+        </router-link>
 
         <!-- 댓글 개수/좋아요 개수 -->
-        <!-- =>
-        ({{ article.comment_count }}) | +{{ article.like_count }} -->
+        =>
+        댓글 개수: {{ article.comment_count }} | 좋아요 개수: {{ article.like_count }}
 
       </li>
     </ul>
@@ -31,7 +33,7 @@
   export default {
     name: 'ArticleList',
     computed: {
-      ...mapGetters(['articles'])
+      ...mapGetters(['articles', 'isLoggedIn'])
     },
     methods: {
       ...mapActions(['fetchArticles'])

@@ -14,13 +14,16 @@
       <li v-if="isLoggedIn">
         <router-link :to="{ name: 'logout' }">Logout</router-link>
       </li>
+      <li v-if="isLoggedIn">
+        <router-link :to="{ name: 'profile' ,params: { username } }">Profile</router-link>         
+      </li>
 
       <li>
         <router-link :to="{ name: 'articles' }">Community</router-link>
       </li>
-      <li v-if="isLoggedIn">
+      <!-- <li v-if="isLoggedIn">
         <router-link :to="{ name: 'articleNew' }">New</router-link>
-      </li>
+      </li> -->
     </ul>
   </nav>
 </template>
