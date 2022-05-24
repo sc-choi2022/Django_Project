@@ -164,6 +164,7 @@ AUTH_USER_MODEL = 'accounts.User'
 CORS_ALLOWED_ORIGINS = [
     # Vue LocalHost
     'http://localhost:8080',
+    'http://localhost:8081',
 ]
 
 # CORS_ALLOWED_ALL_ORIGINS = True

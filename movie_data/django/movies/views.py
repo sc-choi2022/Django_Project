@@ -35,7 +35,7 @@ def movie(request):
         response1 = requests.get(BASE_URL+path1, params=params1)
         data1 = response1.json()
         movie = Movie()
-        movie.pk = id
+        movie.id = id
         movie.title = data1['title']
         movie.orginal_title = data1['original_title']
         if data1['overview'] == '':
@@ -150,7 +150,7 @@ def movieid(request):
     response1 = requests.get(BASE_URL+path1, params=params1)
     data1 = response1.json()
     movie = Movie()
-    movie.pk = id
+    movie.id = id
     movie.title = data1['title']
     movie.orginal_title = data1['original_title']
     if data1['overview'] == '':
@@ -263,8 +263,8 @@ def index(request):
 
 
 @api_view(['GET'])
-def movie_detail(request, movie_pk):
-    movie = get_object_or_404(Movie, pk=movie_pk)
+def movie_detail(request, movie_id):
+    movie = get_object_or_404(Movie, pk=movie_id)
     serializer = MovieSerializer(movie)
     return Response(serializer.data)
 

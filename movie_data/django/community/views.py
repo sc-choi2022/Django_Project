@@ -32,8 +32,8 @@ def article_list(request):
 
 
 @api_view(['GET', 'PUT', 'DELETE'])
-def article_detail(request, article_pk):
-    article = get_object_or_404(Article, pk=article_pk)
+def article_detail(request, article_id):
+    article = get_object_or_404(Article, pk=article_id)
 
     if request.method == 'GET':
         serializer = ArticleSerializer(article)
@@ -54,10 +54,10 @@ def article_detail(request, article_pk):
 
 
 @api_view(['POST'])
-def like_article(request, article_pk):
-    article = get_object_or_404(Article, pk=article_pk)
+def like_article(request, article_id):
+    article = get_object_or_404(Article, pk=article_id)
     user = request.user
-    if article.like_users.filter(pk=user.pk).exists():
+    if article.like_users.filter(pk=user.id).exists():
         article.like_users.remove(user)
         serializer = ArticleSerializer(article)
         return Response(serializer.data)
@@ -68,9 +68,9 @@ def like_article(request, article_pk):
 
 
 @api_view(['POST'])
-def create_comment(request, article_pk):
+def create_comment(request, article_id):
     user = request.user
-    article = get_object_or_404(Article, pk=article_pk)
+    article = get_object_or_404(Article, pk=article_id)
     
     serializer = CommentSerializer(data=request.data)
     if serializer.is_valid(raise_exception=True):
@@ -84,9 +84,9 @@ def create_comment(request, article_pk):
 
 
 @api_view(['PUT', 'DELETE'])
-def comment_detail(request, article_pk, comment_pk):
-    article = get_object_or_404(Article, pk=article_pk)
-    comment = get_object_or_404(Comment, pk=comment_pk)
+def comment_detail(request, article_id, comment_id):
+    article = get_object_or_404(Article, pk=article_id)
+    comment = get_object_or_404(Comment, pk=comment_id)
 
     if request.method == 'PUT':
         if request.user == comment.user:
