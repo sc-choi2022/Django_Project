@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div><h1>Home</h1></div><hr>
+    <!-- <div><h1>Home</h1></div><hr> -->
     <div class="container">
       <div class="gallery">       
         <figure class="gallery_item item0"><router-link 
