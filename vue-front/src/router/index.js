@@ -4,6 +4,7 @@ import store from '../store'
 
 import MovieListView from '@/views/MovieListView.vue'
 import MovieDetailView from '@/views/MovieDetailView.vue'
+import RecommendView from '@/views/RecommendView.vue'
 
 import ArticleListView from '@/views/ArticleListView.vue'
 import ArticleNewView from '@/views/ArticleNewView'
@@ -105,10 +106,6 @@ router.beforeEach((to, from, next) => {
     // 원래 이동하려던 곳으로 이동
     next()
   }
-  // 저 위에껄 쓰면 리다이렉트 될 때는 원래 이동하려는 곳으로 가는데 그냥 login시 Home이 아닌 community로 간다 왜지?
-  // if (!isAuthRequired && isLoggedIn) {
-  //   next({ name: 'movies' })
-  // }
 })
 
 export default router
