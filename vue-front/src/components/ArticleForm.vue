@@ -44,7 +44,7 @@ import { mapActions } from 'vuex'
           this.createArticle(this.newArticle)
         } else if (this.action === 'update') {
           const payload = {
-            pk: this.article.pk,
+            id: this.article.id,
             ...this.newArticle,
           }
           this.updateArticle(payload)

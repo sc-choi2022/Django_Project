@@ -5,7 +5,7 @@
           <button>New</button>
         </router-link>
     <ul>
-      <li v-for="article in articles" :key="article.pk">
+      <li v-for="article in articles" :key="article.id">
         <!-- 작성자 -->
         username: {{ article.user.username }}  |
         title: {{ article.title }}  |
@@ -13,7 +13,7 @@
 
         <!-- 글 이동 링크 (제목) -->
         <router-link 
-          :to="{ name: 'article', params: {articlePk: article.pk} }">
+          :to="{ name: 'article', params: {articleId: article.id} }">
           {{ article.title }}
         </router-link>
 

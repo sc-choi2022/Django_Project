@@ -13,18 +13,18 @@
     
     <!-- Article Edit/Delete UI -->
     <div v-if="isAuthor">
-      <router-link :to="{ name: 'articleEdit', params: { articlePk } }">
+      <router-link :to="{ name: 'articleEdit', params: { articleId } }">
         <button>Edit</button>
       </router-link>
       |
-      <button @click="deleteArticle(articlePk)">Delete</button>
+      <button @click="deleteArticle(articleId)">Delete</button>
     </div>
 
     <!-- Article Like UI -->
     <div>
       Likeit:
       <button
-        @click="likeArticle(articlePk)"
+        @click="likeArticle(articleId)"
       >{{ likeCount }}</button>
     </div>
 
@@ -46,7 +46,7 @@
     components: { CommentList },
     data() {
       return {
-        articlePk: this.$route.params.articlePk,
+        articleId: this.$route.params.articleId,
       }
     },
     computed: {
@@ -63,7 +63,7 @@
       ])
     },
     created() {
-      this.fetchArticle(this.articlePk)
+      this.fetchArticle(this.articleId)
     },
   }
 </script>

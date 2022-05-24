@@ -2,12 +2,16 @@
   <div>
     <h1>Home</h1>
     <ul>
-      <li v-for="movie in movies" :key="movie.pk">
+      <li v-for="movie in movies" :key="movie.id">
         {{ movie }}
         <hr>
         {{ movie.title }}
         {{ movie.poster_path }}
         {{ movie.video }}
+        <router-link 
+          :to="{ name: 'movie', params: {movieId: movie.id} }">
+          {{ movie.title }}
+        </router-link>
         <hr>
 
         <!-- 글 이동 링크 (제목)

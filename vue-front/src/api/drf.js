@@ -17,15 +17,16 @@ export default {
   },
   movies: {
     movies: () => HOST + MOVIES,
+    movie: movieId => HOST + MOVIES + 'movie/' +`${movieId}/`,
   },
   articles: {
     // /articles/
     articles: () => HOST + ARTICLES,
     // /articles/1/
-    article: articlePk => HOST + ARTICLES + `${articlePk}/`,
-    likeArticle: articlePk => HOST + ARTICLES + `${articlePk}/` + 'like/',
-    comments: articlePk => HOST + ARTICLES + `${articlePk}/` + COMMENTS,
-    comment: (articlePk, commentPk) =>
-      HOST + ARTICLES + `${articlePk}/` + COMMENTS + `${commentPk}/`,
+    article: articleId => HOST + ARTICLES + `${articleId}/`,
+    likeArticle: articleId => HOST + ARTICLES + `${articleId}/` + 'like/',
+    comments: articleId => HOST + ARTICLES + `${articleId}/` + COMMENTS,
+    comment: (articleId, commentId) =>
+      HOST + ARTICLES + `${articleId}/` + COMMENTS + `${commentId}/`,
   },
 }

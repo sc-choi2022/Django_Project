@@ -22,7 +22,7 @@ export default {
   methods: {
     ...mapActions(['createComment']),
     onSubmit() {
-      this.createComment({ articlePk: this.article.pk, content: this.content, })
+      this.createComment({ articleId: this.article.id, content: this.content, })
       this.content = ''
     }
   }

@@ -7,7 +7,7 @@ class MovieSerializer(serializers.ModelSerializer):
 
         class Meta:
             model = Actor
-            fields = ('name','profile_path',)
+            fields = ('id', 'name', 'profile_path',)
         
     actors = ActorSerializer(many=True, read_only=True)
 
@@ -16,7 +16,7 @@ class MovieSerializer(serializers.ModelSerializer):
 
         class Meta:
             model = Director
-            fields = ('name',)
+            fields = ('id', 'name',)
         
     directors = DirectorSerializer(many=True, read_only=True)
 
@@ -25,7 +25,7 @@ class MovieSerializer(serializers.ModelSerializer):
 
         class Meta:
             model = Genre
-            fields = ('name',)
+            fields = ('id', 'name',)
         
     genres = GenreSerializer(many=True, read_only=True)
 
@@ -35,7 +35,7 @@ class MovieSerializer(serializers.ModelSerializer):
         class Meta:
 
             model = Certification
-            fields = ('name',)
+            fields = ('id', 'name',)
 
     certifications = CertificationSerializer(many=True, read_only=True)
 
@@ -44,7 +44,7 @@ class MovieSerializer(serializers.ModelSerializer):
 
         class Meta:
             model = OTT
-            fields = ('name',)
+            fields = ('id', 'name',)
         
     otts = OTTSerializer(many=True, read_only=True)
 
@@ -64,7 +64,7 @@ class MovieListSerializer(serializers.ModelSerializer):
 
         class Meta:
             model = OTT
-            fields = ('name',)
+            fields = ('id', 'name',)
         
     otts = OTTSerializer(many=True, read_only=True)
 
@@ -73,7 +73,7 @@ class MovieListSerializer(serializers.ModelSerializer):
 
         class Meta:
             model = Director
-            fields = ('name',)
+            fields = ('id', 'name',)
         
     directors = DirectorSerializer(many=True, read_only=True)
 
@@ -82,7 +82,7 @@ class MovieListSerializer(serializers.ModelSerializer):
 
         class Meta:
             model = Keyword
-            fields = ('name',)
+            fields = ('id', 'name',)
         
     keywords = KeywordSerializer(many=True, read_only=True)
 

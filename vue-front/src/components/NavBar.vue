@@ -4,7 +4,7 @@
       <li>
         <router-link :to="{ name: 'movies' }">Home</router-link>
       </li>
-
+      
       <li v-if="!isLoggedIn">
         <router-link :to="{ name: 'login' }">Login</router-link>
       </li>

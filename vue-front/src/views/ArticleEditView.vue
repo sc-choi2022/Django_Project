@@ -21,7 +21,7 @@ import { mapGetters, mapActions } from 'vuex'
       ...mapActions(['fetchArticle'])
     },
     created() {
-      this.fetchArticle(this.$route.params.articlePk)
+      this.fetchArticle(this.$route.params.articleId)
     },
   }
 </script>

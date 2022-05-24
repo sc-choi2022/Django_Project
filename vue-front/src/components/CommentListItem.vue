@@ -32,8 +32,8 @@ export default {
     return {
       isEditing: false,
       payload: {
-        articlePk: this.comment.article,
-        commentPk: this.comment.pk,
+        articleId: this.comment.article,
+        commentId: this.comment.id,
         content: this.comment.content,
         created_at: this.comment.created_at,
         updated_at: this.comment.updated_at,

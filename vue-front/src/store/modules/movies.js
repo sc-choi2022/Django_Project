@@ -1,6 +1,6 @@
 import axios from 'axios'
 import drf from '@/api/drf'
-// import router from '@/router'
+import router from '@/router'
 
 // import _ from 'lodash'
 // import accounts from './accounts'
@@ -45,30 +45,21 @@ export default {
         .catch(err => console.error(err.response))
     },
 
-    // fetchArticle({ commit, getters }, articlePk) {
-    //   /* 단일 게시글 받아오기
-    //   GET: article URL (token)
-    //     성공하면
-    //       응답으로 받은 게시글들을 state.articles에 저장
-    //     실패하면
-    //       단순 에러일 때는
-    //         에러 메시지 표시
-    //       404 에러일 때는
-    //         NotFound404 로 이동
-    //   */
-    //   axios({
-    //     url: drf.articles.article(articlePk),
-    //     method: 'get',
-    //     headers: getters.authHeader,
-    //   })
-    //     .then(res => commit('SET_ARTICLE', res.data))
-    //     .catch(err => {
-    //       console.error(err.response)
-    //       if (err.response.status === 404) {
-    //         router.push({ name: 'NotFound404' })
-    //       }
-    //     })
-    // },
+    fetchMovie({ commit }, movieId) {
+      
+      axios({
+        url: drf.movies.movie(movieId),
+        method: 'get',
+        // headers: getters.authHeader,
+      })
+        .then(res => commit('SET_MOVIE', res.data))
+        .catch(err => {
+          console.error(err.response)
+          if (err.response.status === 404) {
+            router.push({ name: 'NotFound404' })
+          }
+        })
+    },
 
     
 

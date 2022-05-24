@@ -13,7 +13,7 @@
     data() {
       return {
         article: {
-          pk: null,
+          id: null,
           title: '',
           content: '',
           movie_title: '',

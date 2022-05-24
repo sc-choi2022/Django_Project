@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import store from '../store'
 
 import MovieListView from '@/views/MovieListView.vue'
+import MovieDetailView from '@/views/MovieDetailView.vue'
 
 import ArticleListView from '@/views/ArticleListView.vue'
 import ArticleNewView from '@/views/ArticleNewView'
@@ -43,7 +44,12 @@ const routes = [
     component: MovieListView
   },
   {
-    path: '/community',  // Home
+    path: '/movie/:movieId',
+    name: 'movie',
+    component: MovieDetailView
+  },
+  {
+    path: '/community',
     name: 'articles',
     component: ArticleListView
   },
@@ -53,12 +59,12 @@ const routes = [
     component: ArticleNewView
   },
   {
-    path: '/community/articles/:articlePk',
+    path: '/community/articles/:articleId',
     name: 'article',
     component: ArticleDetailView
   },
   {
-    path: '/community/articles/:articlePk/edit',
+    path: '/community/articles/:articleId/edit',
     name: 'articleEdit',
     component: ArticleEditView
   },
