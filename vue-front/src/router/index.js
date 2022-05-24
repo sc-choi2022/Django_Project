@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+// import store from '../store'
 
 import MovieListView from '@/views/MovieListView.vue'
 
@@ -13,15 +14,11 @@ import SignupView from '@/views/SignupView.vue'
 Vue.use(VueRouter)
 
 const routes = [
+  // 인증 필요 없음
   {
     path: '/login',
     name: 'login',
     component: LoginView
-  },
-  {
-    path: '/logout',
-    name: 'logout',
-    component: LogoutView
   },
   {
     path: '/signup',
@@ -37,6 +34,12 @@ const routes = [
     path: '/community',  // Home
     name: 'articles',
     component: ArticleListView
+  },
+  // 인증 필요함
+  {
+    path: '/logout',
+    name: 'logout',
+    component: LogoutView
   },
   {
     path: '/community/articles/new',
@@ -60,5 +63,26 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 })
+
+// router.beforeEach((to, from, next) => {
+//   // 로그인 여부 확인 (Vuex 사용 시)
+//   const { isLoggedIn } = store.getters
+
+//   // Auth가 필요한 route의 name
+//   const noAuthPages = ['articleNew']
+
+//   // 현재 이동하고자 하는 페이지가 Auth가 필요한가?
+//   const isAuthRequired = !noAuthPages.includes(to.name)
+
+//   // Auth가 필요한데, 로그인되어 있지 않다면?
+//   if (isAuthRequired && !isLoggedIn) {
+//     alert('Require Login. Redirecting..')
+//     // 로그인 페이지로 이동
+//     next({ name: 'login' })
+//   } else {
+//     // 원래 이동하려던 곳으로 이동
+//     next()
+//   }
+// })
 
 export default router
