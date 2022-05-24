@@ -15,33 +15,29 @@
     <p>actors: {{ movie.actors }}</p>
     <p>otts: {{ movie.otts }}</p>
 
-
     <p>vote_count: {{ movie.vote_count }}</p>
     <p>vote_average: {{ movie.vote_average }}</p>
+
+    <!-- user_id 출력된다 -->
     <p>users_mymovie: {{ movie.users_mymovie }}</p>
     <p>users_wish: {{ movie.users_wish }}</p>
-    
-    <!-- Article Edit/Delete UI -->
-    <!-- <div v-if="isAuthor"> -->
-      <!-- {{ movie.}} -->
-      <!-- <router-link :to="{ name: 'articleEdit', params: { articlePk } }">
-        <button>Edit</button>
-      </router-link>
-      |
-      <button @click="deleteArticle(articlePk)">Delete</button> -->
-    <!-- </div> -->
+
 
     <!-- Article Like UI -->
-    <!-- <div>
-      Likeit:
+    <div>
+      Mymovie:
       <button
-        @click="likeArticle(articlePk)"
-      >{{ likeCount }}</button>
-    </div> -->
+        @click="myMovie(movieId)"
+      >myMovie</button>
+    </div>
 
-    <!-- <hr /> -->
-    <!-- Comment UI
-    <comment-list :comments="article.comments"></comment-list> -->
+    <div>
+      wish:
+      <button
+        @click="wish(movieId)"
+      >wish</button>
+    </div>
+
 
   </div>
 </template>
@@ -57,16 +53,13 @@
       }
     },
     computed: {
-      ...mapGetters(['movie']),
-      // 'isAuthor', 다시 써주기
-      // likeCount() {
-      //   return this.article.like_users?.length
-      // }
+      ...mapGetters(['isAuthor', 'movie']),
     },
     methods: {
       ...mapActions([
         'fetchMovie',
-        // 'likeArticle',
+        'myMovie',
+        'wish',
       ])
     },
     created() {

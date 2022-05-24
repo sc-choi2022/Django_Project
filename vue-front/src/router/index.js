@@ -18,6 +18,7 @@ import ProfileView from '@/views/ProfileView.vue'
 Vue.use(VueRouter)
 
 const routes = [
+  // accounts
   {
     path: '/login',
     name: 'login',
@@ -34,10 +35,12 @@ const routes = [
     component: LogoutView
   },
   {
-    path: '/profile/:username',  // /profile/neo
+    path: '/profile/:username',
     name: 'profile',
     component: ProfileView,
   },
+  
+  // movies
   {
     path: '/',  // Home
     name: 'movies',
@@ -48,6 +51,13 @@ const routes = [
     name: 'movie',
     component: MovieDetailView
   },
+  {
+    path: '/recommend',
+    name: 'recommend',
+    component: RecommendView
+  },
+  
+  // community
   {
     path: '/community',
     name: 'articles',
@@ -95,7 +105,7 @@ router.beforeEach((to, from, next) => {
     // 원래 이동하려던 곳으로 이동
     next()
   }
-
+  // 저 위에껄 쓰면 리다이렉트 될 때는 원래 이동하려는 곳으로 가는데 그냥 login시 Home이 아닌 community로 간다 왜지?
   // if (!isAuthRequired && isLoggedIn) {
   //   next({ name: 'movies' })
   // }

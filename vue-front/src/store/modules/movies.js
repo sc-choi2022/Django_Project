@@ -15,9 +15,9 @@ export default {
   getters: {
     movies: state => state.movies,
     movie: state => state.movie,
-    // isAuthor: (state, getters) => {
-    //   return state.article.user?.username === getters.currentUser.username
-    // },
+    isAuthor: (state, getters) => {
+      return state.movie.user?.username === getters.currentUser.username
+    },
     // isArticle: state => !_.isEmpty(state.article),
   },
 
@@ -45,12 +45,12 @@ export default {
         .catch(err => console.error(err.response))
     },
 
-    fetchMovie({ commit }, movieId) {
+    fetchMovie({ commit, getters }, movieId) {
       
       axios({
         url: drf.movies.movie(movieId),
         method: 'get',
-        // headers: getters.authHeader,
+        headers: getters.authHeader,
       })
         .then(res => commit('SET_MOVIE', res.data))
         .catch(err => {
@@ -63,22 +63,40 @@ export default {
 
     
 
-    // likeArticle({ commit, getters }, articlePk) {
-    //   /* 좋아요
-    //   POST: likeArticle URL(token)
-    //     성공하면
-    //       state.article 갱신
-    //     실패하면
-    //       에러 메시지 표시
-    //   */
-    //   axios({
-    //     url: drf.articles.likeArticle(articlePk),
-    //     method: 'post',
-    //     headers: getters.authHeader,
-    //   })
-    //     .then(res => commit('SET_ARTICLE', res.data))
-    //     .catch(err => console.error(err.response))
-    // },
+    myMovie({ commit, getters }, movieId) {
+      /* 좋아요
+      POST: likeArticle URL(token)
+        성공하면
+          state.article 갱신
+        실패하면
+          에러 메시지 표시
+      */
+      axios({
+        url: drf.movies.myMovie(movieId),
+        method: 'post',
+        headers: getters.authHeader,
+      })
+        .then(res => commit('SET_MOVIE', res.data))
+        .catch(err => console.error(err.response))
+    },
+
+
+    wish({ commit, getters }, movieId) {
+      /* 좋아요
+      POST: likeArticle URL(token)
+        성공하면
+          state.article 갱신
+        실패하면
+          에러 메시지 표시
+      */
+      axios({
+        url: drf.movies.wish(movieId),
+        method: 'post',
+        headers: getters.authHeader,
+      })
+        .then(res => commit('SET_MOVIE', res.data))
+        .catch(err => console.error(err.response))
+    },
 
 		// createComment({ commit, getters }, { articlePk, content }) {
     //   /* 댓글 생성

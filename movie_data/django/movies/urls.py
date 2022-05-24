@@ -10,4 +10,6 @@ urlpatterns = [
     path('recommend/otts/<int:ott_id>/', views.recommend_otts, name='recommend_otts'),
     path('recommend/directors/<int:director_id>/', views.recommend_directors, name='recommend_directors'),
     path('recommend/keywords/<int:keyword_id>/', views.recommend_keywords, name='recommend_keywords'),
+    path('<int:movie_id>/mymovie/', views.my_movie),
+    path('<int:movie_id>/wish/', views.wish),
 ]

@@ -269,6 +269,34 @@ def movie_detail(request, movie_id):
     return Response(serializer.data)
 
 
+@api_view(['POST'])
+def my_movie(request, movie_id):
+    movie = get_object_or_404(Movie, pk=movie_id)
+    user = request.user
+    if movie.users_mymovie.filter(pk=user.pk).exists():
+        movie.users_mymovie.remove(user)
+        serializer = MovieSerializer(movie)
+        return Response(serializer.data)
+    else:
+        movie.users_mymovie.add(user)
+        serializer = MovieSerializer(movie)
+        return Response(serializer.data)
+
+
+@api_view(['POST'])
+def wish(request, movie_id):
+    movie = get_object_or_404(Movie, pk=movie_id)
+    user = request.user
+    if movie.users_wish.filter(pk=user.pk).exists():
+        movie.users_wish.remove(user)
+        serializer = MovieSerializer(movie)
+        return Response(serializer.data)
+    else:
+        movie.users_wish.add(user)
+        serializer = MovieSerializer(movie)
+        return Response(serializer.data)
+
+
 @api_view(['GET'])
 def recommend_otts(request, ott_id):
     movies = Movie.objects.filter(otts=str(ott_id)).order_by('?')[:5]    
@@ -288,3 +316,4 @@ def recommend_keywords(request, keyword_id):
     movies = Movie.objects.filter(keywords=str(keyword_id)).order_by('?')[:5]  
     serializer = MovieMainListSerializer(movies,many=True)  
     return Response(serializer.data)
+

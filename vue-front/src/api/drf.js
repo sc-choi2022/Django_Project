@@ -18,6 +18,8 @@ export default {
   movies: {
     movies: () => HOST + MOVIES,
     movie: movieId => HOST + MOVIES + 'movie/' +`${movieId}/`,
+    myMovie: movieId => HOST + MOVIES + `${movieId}/` + 'mymovie/',
+    wish: movieId => HOST + MOVIES + `${movieId}/` + 'wish/',
   },
   articles: {
     // /articles/
