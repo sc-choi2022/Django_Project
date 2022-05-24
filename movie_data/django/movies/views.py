@@ -35,7 +35,7 @@ def movie(request):
         response1 = requests.get(BASE_URL+path1, params=params1)
         data1 = response1.json()
         movie = Movie()
-        movie.id = id
+        movie.pk = id
         movie.title = data1['title']
         movie.orginal_title = data1['original_title']
         if data1['overview'] == '':
@@ -150,7 +150,7 @@ def movieid(request):
     response1 = requests.get(BASE_URL+path1, params=params1)
     data1 = response1.json()
     movie = Movie()
-    movie.id = id
+    movie.pk = id
     movie.title = data1['title']
     movie.orginal_title = data1['original_title']
     if data1['overview'] == '':
