@@ -8,12 +8,22 @@
       <h2 class="logo" v-if="ottId === 97">Watcha</h2>
       <h2 class="logo" v-if="ottId === 337">Disney Plus</h2>
     </div>
-    <div class="container">
-      <img :src="cardUrl + ottmovies[0].poster_path" alt="movie_poster" class="poster-1">
-      <img :src="cardUrl + ottmovies[1].poster_path" alt="movie_poster" class="poster-1">
-      <img :src="cardUrl + ottmovies[2].poster_path" alt="movie_poster" class="poster-2">
-      <img :src="cardUrl + ottmovies[3].poster_path" alt="movie_poster" class="poster-3">
-      <img :src="cardUrl + ottmovies[4].poster_path" alt="movie_poster" class="poster-4">
+    <div class="container container1" v-if="ottmovies.length">
+      <router-link 
+        :to="{ name: 'movie', params: {movieId: ottmovies[0].id} }"><img :src="cardUrl + ottmovies[0].poster_path" alt="movie_poster">
+      </router-link>
+      <router-link 
+        :to="{ name: 'movie', params: {movieId: ottmovies[1].id} }"><img :src="cardUrl + ottmovies[1].poster_path" alt="movie_poster">
+      </router-link>
+      <router-link 
+        :to="{ name: 'movie', params: {movieId: ottmovies[2].id} }"><img :src="cardUrl + ottmovies[2].poster_path" alt="movie_poster">
+      </router-link>
+      <router-link 
+        :to="{ name: 'movie', params: {movieId: ottmovies[3].id} }"><img :src="cardUrl + ottmovies[3].poster_path" alt="movie_poster">
+      </router-link>
+      <router-link 
+        :to="{ name: 'movie', params: {movieId: ottmovies[4].id} }"><img :src="cardUrl + ottmovies[4].poster_path" alt="movie_poster">
+      </router-link>
     </div>
   </div>
 </template>
@@ -49,7 +59,7 @@
   box-sizing:border-box;
 }
 body {
-  width: 100%;
+  width: 150%;
   height: 100vh;
   background-color:#000;
   
@@ -57,7 +67,7 @@ body {
   place-items:center;
 }
 img {
-  width: 40%;
+  width: 120%;
   height: 100%;
   object-fit:cover;
   
@@ -67,16 +77,16 @@ img {
   transform:perspective(800px) rotateY(25deg);
   transition:0.5s;
 }
-.container {
-  max-width:600px;
-  max-height:350px;
+.container1 {
+  width: 100%;
   display:flex;
   justify-content:center;
   align-items:center;
-  gap:20px;
+  gap:1%;
   
 }
-.container:hover img {
+
+.container1:hover img {
   opacity:0.3;
 }
 

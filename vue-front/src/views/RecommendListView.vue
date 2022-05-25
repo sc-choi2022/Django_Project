@@ -3,7 +3,7 @@
     <div class="container">
       <div class="gallery1">
         <figure class="gallery_item item1"><router-link 
-          :to="{ name: 'recommendOtt', params: {ottId: 8} }"><img src="https://images.ctfassets.net/y2ske730sjqp/1aONibCke6niZhgPxuiilC/2c401b05a07288746ddf3bd3943fbc76/BrandAssets_Logos_01-Wordmark.jpg" alt="netflix" height="200" width="300">
+          :to="{ name: 'recommendOtt', params: {ottId: 8} }"><img src="https://w.namu.la/s/984a3a524c3a76ef69967a3538f0b655d9e4a9b948314bd8d57f34a1502753104f1613f356c08d4352cdfad86bbea9cd56b2133ea5c9c7a57f1c065b1048cb5b99a3d5c985c3e5dcc9771079d20c1e9243522e2675093317ec2656221a51fa59" alt="netflix" height="200" width="300">
           </router-link>
         </figure>
         <figure class="gallery_item item2"><router-link 
@@ -11,7 +11,7 @@
           </router-link>
         </figure>
         <figure class="gallery_item item3"><router-link 
-          :to="{ name: 'recommendOtt', params: {ottId: 337} }"><img src="https://lumiere-a.akamaihd.net/v1/images/disney_logo_nov_2021_rbg_0fa74b54.jpeg" alt="disney plus" height="200" width="300">
+          :to="{ name: 'recommendOtt', params: {ottId: 337} }"><img src="https://w.namu.la/s/e53fcef546cc1b3f510694f331690215c764c0672c35dd34d207f29ed51c38de36e9f57e5bdd2ee05df77b4c1731d4ce840d3990860b959d27dc073339f94f0705d5bb2a4295a17b8911c5f6d31384752c47dedbd5d7f51bfec4db459a7e6f4b" alt="disney plus" height="200" width="300">
           </router-link>
         </figure>
       </div>
