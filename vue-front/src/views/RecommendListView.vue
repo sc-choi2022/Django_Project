@@ -3,15 +3,15 @@
     <div class="container">
       <div class="gallery1">
         <figure class="gallery_item item1"><router-link 
-          :to="{ name: 'recommendOtt', params: {ottId: 8} }"><img src="https://img.khan.co.kr/news/2022/04/20/2022042001002421400214721.jpg" alt="netflix" height="200" width="300">
+          :to="{ name: 'recommendOtt', params: {ottId: 8} }"><img src="https://images.ctfassets.net/y2ske730sjqp/1aONibCke6niZhgPxuiilC/2c401b05a07288746ddf3bd3943fbc76/BrandAssets_Logos_01-Wordmark.jpg" alt="netflix" height="200" width="300">
           </router-link>
         </figure>
         <figure class="gallery_item item2"><router-link 
-          :to="{ name: 'recommendOtt', params: {ottId: 97} }"><img src="https://image.edaily.co.kr/images/Photo/files/NP/S/2021/07/PS21070900209.jpg" alt="watcha" height="200" width="300">
+          :to="{ name: 'recommendOtt', params: {ottId: 97} }"><img src="https://w.namu.la/s/806795f01bfdb99ee07ef5ed4d26c7a76ce99bddf229f51418d040f4387944e4e06d19bcbd84da2a179de6273e3ca30f084aabc97154fb91a2f167ee349cec6d6e3c4db1abb00949ce2523d61074442a389fffadb69a3030b85c5168be94f968" alt="watcha" height="200" width="300">
           </router-link>
         </figure>
         <figure class="gallery_item item3"><router-link 
-          :to="{ name: 'recommendOtt', params: {ottId: 337} }"><img src="https://img.wowtv.co.kr/wowtv_news/dnrs/20211112/B20211112084626560.jpg" alt="disney plus" height="200" width="300">
+          :to="{ name: 'recommendOtt', params: {ottId: 337} }"><img src="https://lumiere-a.akamaihd.net/v1/images/disney_logo_nov_2021_rbg_0fa74b54.jpeg" alt="disney plus" height="200" width="300">
           </router-link>
         </figure>
       </div>
