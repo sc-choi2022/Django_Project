@@ -27,10 +27,10 @@
 </script>
 
 <style>
-@import 'https://fonts.googleapis.com/css?family=Raleway';
+  @import 'https://fonts.googleapis.com/css?family=Raleway';
   .color
   {
-      background: rgb(4, 23, 59);
+      background: linear-gradient(#141E30, #243B55);
   }
   html, body
   {

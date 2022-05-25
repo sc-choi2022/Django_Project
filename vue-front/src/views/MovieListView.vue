@@ -80,6 +80,10 @@
     height: 100%;
     object-fit: cover;
 }
+#app > div:nth-child(2) > div > div > figure.gallery_item > a {
+  margin-left: 0;
+  padding-left: 0;
+}
 .item0 {
     grid-column-start: 1;
     grid-column-end: 3;
