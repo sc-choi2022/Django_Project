@@ -49,7 +49,8 @@ export default {
           const token = res.data.key
           dispatch('saveToken', token)
           dispatch('fetchCurrentUser')
-          router.push({ name: 'movies' })
+          const nextroute = router.currentRoute.query.next
+          router.push(nextroute)
         })
         .catch(err => {
           console.error(err.response.data)

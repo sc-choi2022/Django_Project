@@ -119,7 +119,7 @@ router.beforeEach((to, from, next) => {
   if (isAuthRequired && !isLoggedIn) {
     alert('Require Login. Redirecting..')
     // 로그인 페이지로 이동
-    next({ name: 'login' })
+    next({ name: 'login' , query : { next: to.path }})
   } else {
     // 원래 이동하려던 곳으로 이동
     next()
