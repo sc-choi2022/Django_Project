@@ -15,9 +15,9 @@ class Movie(models.Model):
     users_wish = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='movies_wish')
 
 
-class MovieComment(models.Model):
-    movie = models.ForeignKey(Movie, on_delete=models.CASCADE, related_name='movie_comments')
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='movie_comments')
+class Review(models.Model):
+    movie = models.ForeignKey(Movie, on_delete=models.CASCADE, related_name='reviews')
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='reviews')
     content = models.CharField(max_length=100)
     rank = models.IntegerField()
     created_at = models.DateTimeField(auto_now_add=True)

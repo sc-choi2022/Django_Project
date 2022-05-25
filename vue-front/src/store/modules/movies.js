@@ -29,7 +29,7 @@ export default {
     SET_OTTMOVIES: (state, ottmovies) => state.ottmovies = ottmovies,
     SET_DIRECTORMOVIES: (state, directormovies) => state.directormovies = directormovies,
     SET_KEYWORDMOVIES: (state, keywordmovies) => state.keywordmovies = keywordmovies,
-
+    SET_MOVIE_REVIEWS: (state, reviews) => (state.movie.reviews = reviews),
   },
 
   actions: {
@@ -133,6 +133,54 @@ export default {
         .then(res => commit('SET_MOVIE', res.data))
         .catch(err => console.error(err.response))
     },
+
+    createReview({ commit, getters }, { movieId, content, rank }) {
+      
+      const comment = { content, rank }
+
+      axios({
+        url: drf.movies.reviews(movieId),
+        method: 'post',
+        data: comment,
+        headers: getters.authHeader,
+      })
+        .then(res => {
+          commit('SET_MOVIE_REVIEWS', res.data)
+        })
+        .catch(err => console.error(err.response))
+    },
+
+    updateReview({ commit, getters }, { movieId, reviewId, content, rank }) {
+      
+      const comment = { content, rank }
+
+      axios({
+        url: drf.movies.review(movieId, reviewId),
+        method: 'put',
+        data: comment,
+        headers: getters.authHeader,
+      })
+        .then(res => {
+          commit('SET_MOVIE_REVIEWS', res.data)
+        })
+        .catch(err => console.error(err.response))
+    },
+
+    deleteReview({ commit, getters }, { movieId, reviewId }) {
+
+        if (confirm('정말 삭제하시겠습니까?')) {
+          axios({
+            url: drf.movies.review(movieId, reviewId),
+            method: 'delete',
+            data: {},
+            headers: getters.authHeader,
+          })
+            .then(res => {
+              commit('SET_MOVIE_REVIEWS', res.data)
+            })
+            .catch(err => console.error(err.response))
+        }
+      },
 
 		
   },

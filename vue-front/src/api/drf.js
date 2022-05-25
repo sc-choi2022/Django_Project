@@ -23,6 +23,8 @@ export default {
     otts: ottId => HOST + MOVIES + 'recommend/' + 'otts/' + `${ottId}/`,
     directors: directorId => HOST + MOVIES + 'recommend/' + 'directors/' + `${directorId}/`,
     keywords: keywordId => HOST + MOVIES + 'recommend/' + 'keywords/' + `${keywordId}/`,
+    reviews: movieId => HOST + MOVIES + `${movieId}/` + 'create_comment/',
+    review: (movieId, reviewId) => HOST + MOVIES + `${movieId}/` + 'comment_detail/' + `${reviewId}/`,
   },
   articles: {
     // /articles/

@@ -2,6 +2,7 @@
   <div>
     <div class="container">
       <h1>{{ movie.title }}</h1>
+      <movie-comment-list :reviews="movie.reviews"></movie-comment-list>
 
       <p>overview: {{ movie.overview }}</p>
       <p>runtime: {{ movie.runtime }}</p>
@@ -45,9 +46,11 @@
 
 <script>
   import { mapGetters, mapActions } from 'vuex'
+  import MovieCommentList from '@/components/MovieCommentList.vue'
 
   export default {
     name: 'MovieDetail',
+    components: { MovieCommentList },
     data() {
       return {
         movieId: this.$route.params.movieId,

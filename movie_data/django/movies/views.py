@@ -1,6 +1,6 @@
 import requests
 from django.shortcuts import render, get_object_or_404
-from movies.models import Movie, Genre, Certification, OTT, Keyword, Actor, Director
+from movies.models import Movie, Genre, Certification, OTT, Keyword, Actor, Director, Review
 from dotenv import load_dotenv
 import os
 import random
@@ -9,7 +9,7 @@ from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
-from movies.serializers import MovieMainListSerializer, MovieSerializer, MovieCommentSerializer
+from movies.serializers import MovieMainListSerializer, MovieSerializer, ReviewSerializer
 load_dotenv()
 API_KEY = os.environ.get('API_KEY')
 
@@ -320,13 +320,35 @@ def recommend_keywords(request, keyword_id):
 
 
 @api_view(['POST'])
-def create_movie_comment(request, movie_id):
+def create_comment(request, movie_id):
     user = request.user
     movie = get_object_or_404(Movie, pk=movie_id)
     
-    serializer = MovieCommentSerializer(data=request.data)
+    serializer = ReviewSerializer(data=request.data)
     if serializer.is_valid(raise_exception=True):
         serializer.save(movie=movie, user=user)
-        movie_comments = movie.movie_comments.all()
-        serializer = MovieCommentSerializer(movie_comments, many=True)
+        reviews = movie.reviews.all()
+        serializer = ReviewSerializer(reviews, many=True)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+
+@api_view(['PUT', 'DELETE'])
+def comment_detail(request, movie_id, review_id):
+    movie = get_object_or_404(Movie, pk=movie_id)
+    review = get_object_or_404(Review, pk=review_id)
+
+    if request.method == 'PUT':
+        if request.user == review.user:
+            serializer = ReviewSerializer(instance=review, data=request.data)
+            if serializer.is_valid(raise_exception=True):
+                serializer.save()
+                reviews = movie.reviews.all()
+                serializer = ReviewSerializer(reviews, many=True)
+                return Response(serializer.data)
+
+    elif request.method == 'DELETE':
+        if request.user == review.user:
+            review.delete()
+            reviews = movie.reviews.all()
+            serializer = ReviewSerializer(reviews, many=True)
+            return Response(serializer.data)
