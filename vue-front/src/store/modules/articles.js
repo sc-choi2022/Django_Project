@@ -3,7 +3,6 @@ import drf from '@/api/drf'
 import router from '@/router'
 
 import _ from 'lodash'
-// import accounts from './accounts'
 
 export default {
   // namespaced: true,
@@ -29,13 +28,6 @@ export default {
 
   actions: {
     fetchArticles({ commit }) {
-      /* 게시글 목록 받아오기
-      GET: articles URL (token)
-        성공하면
-          응답으로 받은 게시글들을 state.articles에 저장
-        실패하면
-          에러 메시지 표시
-      */
       axios({
         url: drf.articles.articles(),
         method: 'get',

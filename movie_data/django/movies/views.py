@@ -313,7 +313,7 @@ def recommend_directors(request, director_id):
 
 @api_view(['GET'])
 def recommend_keywords(request, keyword_id):
-    movies = Movie.objects.filter(keywords=str(keyword_id))
+    movies = Movie.objects.filter(keywords=str(keyword_id)).order_by('?')[:5]
     serializer = MovieMainListSerializer(movies,many=True)  
     return Response(serializer.data)
 

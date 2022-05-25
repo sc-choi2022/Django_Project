@@ -6,6 +6,8 @@ import MovieListView from '@/views/MovieListView.vue'
 import MovieDetailView from '@/views/MovieDetailView.vue'
 import RecommendListView from '@/views/RecommendListView.vue'
 import RecommendOttView from '@/views/RecommendOttView.vue'
+import RecommendDirectorView from '@/views/RecommendDirectorView.vue'
+import RecommendKeywordView from '@/views/RecommendKeywordView.vue'
 
 import ArticleListView from '@/views/ArticleListView.vue'
 import ArticleNewView from '@/views/ArticleNewView'
@@ -59,9 +61,19 @@ const routes = [
     component: RecommendListView
   },
   {
-    path: '/recommend/:ottId',
+    path: '/recommend/ott/:ottId',
     name: 'recommendOtt',
     component: RecommendOttView
+  },
+  {
+    path: '/recommend/director/:directorId',
+    name: 'recommendDirector',
+    component: RecommendDirectorView
+  },
+  {
+    path: '/recommend/keyword/:keywordId',
+    name: 'recommendKeyword',
+    component: RecommendKeywordView
   },
   
   // community

@@ -21,6 +21,8 @@ export default {
     myMovie: movieId => HOST + MOVIES + `${movieId}/` + 'mymovie/',
     wish: movieId => HOST + MOVIES + `${movieId}/` + 'wish/',
     otts: ottId => HOST + MOVIES + 'recommend/' + 'otts/' + `${ottId}/`,
+    directors: directorId => HOST + MOVIES + 'recommend/' + 'directors/' + `${directorId}/`,
+    keywords: keywordId => HOST + MOVIES + 'recommend/' + 'keywords/' + `${keywordId}/`,
   },
   articles: {
     // /articles/
