@@ -2,7 +2,7 @@
   <div>
     <!-- <div><h1>Home</h1></div><hr> -->
     <div class="container">
-      <div class="gallery" v-if='movies.length'>       
+      <div class="gallery" v-if="movies.length">       
         <figure class="gallery_item item0"><router-link 
           :to="{ name: 'movie', params: {movieId: movies[0].id} }"><img :src="cardUrl + movies[0].poster_path" alt="movie_poster" class="posterimg">
           </router-link>
