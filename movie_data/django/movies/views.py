@@ -140,7 +140,7 @@ def movie(request):
 
 def movieid(request):
     BASE_URL = 'https://api.themoviedb.org/3'
-    id = str('77117')
+    id = str('350650')
     path1 = '/movie/' + id
     params1 = {
         'api_key': API_KEY,
@@ -313,7 +313,7 @@ def recommend_directors(request, director_id):
 
 @api_view(['GET'])
 def recommend_keywords(request, keyword_id):
-    movies = Movie.objects.filter(keywords=str(keyword_id)).order_by('?')[:5]  
+    movies = Movie.objects.filter(keywords=str(keyword_id))
     serializer = MovieMainListSerializer(movies,many=True)  
     return Response(serializer.data)
 
