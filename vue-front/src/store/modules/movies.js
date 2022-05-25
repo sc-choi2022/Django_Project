@@ -10,21 +10,23 @@ export default {
   state: {
     movies: [],
     movie: {},
+    ottmovies: [],
   },
 
   getters: {
     movies: state => state.movies,
     movie: state => state.movie,
-    isAuthor: (state, getters) => {
-      return state.movie.user?.username === getters.currentUser.username
-    },
+    ottmovies: state => state.ottmovies,
+    // isAuthor: (state, getters) => {
+    //   return state.movie.user?.username === getters.currentUser.username
+    // },
     // isArticle: state => !_.isEmpty(state.article),
   },
 
   mutations: {
     SET_MOVIES: (state, movies) => state.movies = movies,
     SET_MOVIE: (state, movie) => state.movie = movie,
-    // SET_ARTICLE_COMMENTS: (state, comments) => (state.article.comments = comments),
+    SET_OTTMOVIES: (state, ottmovies) => state.ottmovies = ottmovies,
   },
 
   actions: {
@@ -61,16 +63,19 @@ export default {
         })
     },
 
+    fetchOttMovies({ commit, getters }, ottId) {
+      axios({
+        url: drf.movies.otts(ottId),
+        method: 'get',
+        headers: getters.authHeader,
+      })
+        .then(res => commit('SET_OTTMOVIES', res.data))
+        .catch(err => console.error(err.response))
+    },
+
     
 
     myMovie({ commit, getters }, movieId) {
-      /* 좋아요
-      POST: likeArticle URL(token)
-        성공하면
-          state.article 갱신
-        실패하면
-          에러 메시지 표시
-      */
       axios({
         url: drf.movies.myMovie(movieId),
         method: 'post',
@@ -98,71 +103,6 @@ export default {
         .catch(err => console.error(err.response))
     },
 
-		// createComment({ commit, getters }, { articlePk, content }) {
-    //   /* 댓글 생성
-    //   POST: comments URL(댓글 입력 정보, token)
-    //     성공하면
-    //       응답으로 state.article의 comments 갱신
-    //     실패하면
-    //       에러 메시지 표시
-    //   */
-    //   const comment = { content }
-
-    //   axios({
-    //     url: drf.articles.comments(articlePk),
-    //     method: 'post',
-    //     data: comment,
-    //     headers: getters.authHeader,
-    //   })
-    //     .then(res => {
-    //       commit('SET_ARTICLE_COMMENTS', res.data)
-    //     })
-    //     .catch(err => console.error(err.response))
-    // },
-
-    // updateComment({ commit, getters }, { articlePk, commentPk, content }) {
-    //   /* 댓글 수정
-    //   PUT: comment URL(댓글 입력 정보, token)
-    //     성공하면
-    //       응답으로 state.article의 comments 갱신
-    //     실패하면
-    //       에러 메시지 표시
-    //   */
-    //   const comment = { content }
-
-    //   axios({
-    //     url: drf.articles.comment(articlePk, commentPk),
-    //     method: 'put',
-    //     data: comment,
-    //     headers: getters.authHeader,
-    //   })
-    //     .then(res => {
-    //       commit('SET_ARTICLE_COMMENTS', res.data)
-    //     })
-    //     .catch(err => console.error(err.response))
-    // },
-
-    // deleteComment({ commit, getters }, { articlePk, commentPk }) {
-    //   /* 댓글 삭제
-    //   사용자가 확인을 받고
-    //     DELETE: comment URL (token)
-    //       성공하면
-    //         응답으로 state.article의 comments 갱신
-    //       실패하면
-    //         에러 메시지 표시
-    //   */
-    //     if (confirm('정말 삭제하시겠습니까?')) {
-    //       axios({
-    //         url: drf.articles.comment(articlePk, commentPk),
-    //         method: 'delete',
-    //         data: {},
-    //         headers: getters.authHeader,
-    //       })
-    //         .then(res => {
-    //           commit('SET_ARTICLE_COMMENTS', res.data)
-    //         })
-    //         .catch(err => console.error(err.response))
-    //     }
-    //   },
+		
   },
 }

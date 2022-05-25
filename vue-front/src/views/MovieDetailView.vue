@@ -53,7 +53,8 @@
       }
     },
     computed: {
-      ...mapGetters(['isAuthor', 'movie']),
+      // 'isAuthor', 
+      ...mapGetters(['movie']),
     },
     methods: {
       ...mapActions([

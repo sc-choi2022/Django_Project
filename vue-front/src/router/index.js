@@ -4,7 +4,8 @@ import store from '../store'
 
 import MovieListView from '@/views/MovieListView.vue'
 import MovieDetailView from '@/views/MovieDetailView.vue'
-import RecommendView from '@/views/RecommendView.vue'
+import RecommendListView from '@/views/RecommendListView.vue'
+import RecommendOttView from '@/views/RecommendOttView.vue'
 
 import ArticleListView from '@/views/ArticleListView.vue'
 import ArticleNewView from '@/views/ArticleNewView'
@@ -55,7 +56,12 @@ const routes = [
   {
     path: '/recommend',
     name: 'recommend',
-    component: RecommendView
+    component: RecommendListView
+  },
+  {
+    path: '/recommend/:ottId',
+    name: 'recommendOtt',
+    component: RecommendOttView
   },
   
   // community

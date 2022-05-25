@@ -2,8 +2,8 @@
   <div>
     <div class="container color borderXwidth">
       <router-link :to="{ name: 'movies' }">HOME</router-link>
-      <router-link :to="{ name: 'articles' }">COMMUNITY</router-link> 
-      <a href="">RECOMMEND</a>
+      <router-link :to="{ name: 'articles' }">COMMUNITY</router-link>
+      <router-link :to="{ name: 'recommend' }">RECOMMEND</router-link> 
       <router-link v-if="!isLoggedIn" :to="{ name: 'login' }">LOGIN</router-link>
       <router-link v-if="!isLoggedIn" :to="{ name: 'signup' }">SIGNUP</router-link>
       <router-link v-if="isLoggedIn" :to="{ name: 'logout' }">LOGOUT</router-link>
