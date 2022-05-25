@@ -2,6 +2,8 @@
   <div>
     <div class="container">
       <h1>OTT RECOMMEND</h1>
+    </div>
+    <div class="container">
       <h2 class="logo" v-if="ottId === 8">Netflix</h2>
       <h2 class="logo" v-if="ottId === 97">Watcha</h2>
       <h2 class="logo" v-if="ottId === 337">Disney Plus</h2>
@@ -68,9 +70,6 @@ img {
 .container {
   max-width:600px;
   max-height:350px;
-  
-  
-  
   display:flex;
   justify-content:center;
   align-items:center;
@@ -80,8 +79,9 @@ img {
 .container:hover img {
   opacity:0.3;
 }
+
 .container img:hover {
-  transform:perspective(800px)       rotateY(0deg);
+  transform:perspective(800px) rotateY(0deg);
   opacity:1;
 }
 </style>
