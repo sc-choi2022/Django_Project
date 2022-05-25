@@ -11,7 +11,7 @@ class ProfileSerializer(serializers.ModelSerializer):
 
         class Meta:
             model = Movie
-            fields = ('id','title',)
+            fields = ('id','title','poster_path')
 
     movies_mymovie = MovieSerializer(many=True, read_only=True)
     movies_wish = MovieSerializer(many=True, read_only=True)
