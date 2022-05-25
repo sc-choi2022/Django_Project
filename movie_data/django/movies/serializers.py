@@ -1,5 +1,8 @@
 from rest_framework import serializers
-from .models import Movie, Actor, Director, Genre, Certification, OTT, Keyword
+from .models import Movie, Actor, Director, Genre, Certification, OTT, Keyword, MovieComment
+from django.contrib.auth import get_user_model
+
+User = get_user_model()
 
 class MovieSerializer(serializers.ModelSerializer):
 
@@ -107,3 +110,18 @@ class MovieMainListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Movie
         fields = ('id', 'poster_path', 'title', 'video', 'keywords',)
+
+
+class MovieCommentSerializer(serializers.ModelSerializer):
+
+    class UserSerializer(serializers.ModelSerializer):
+        class Meta:
+            model = User
+            fields = ('id', 'username')
+
+    user = UserSerializer(read_only=True)
+    
+    class Meta:
+        model = MovieComment
+        fields = ('id', 'user', 'content', 'movie', 'created_at', 'updated_at', 'rank',)
+        read_only_fields = ('movie',)
