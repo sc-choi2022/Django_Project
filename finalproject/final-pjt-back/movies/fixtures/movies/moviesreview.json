@@ -1,0 +1,62 @@
+[
+{
+    "model": "movies.review",
+    "pk": 1,
+    "fields": {
+        "movie": 449563,
+        "user": 1,
+        "content": "사랑에 빠지고 싶다~",
+        "rank": 8,
+        "created_at": "2022-05-26T22:37:07.794Z",
+        "updated_at": "2022-05-26T22:37:07.794Z"
+    }
+},
+{
+    "model": "movies.review",
+    "pk": 2,
+    "fields": {
+        "movie": 82695,
+        "user": 2,
+        "content": "노래가 좋아요~~~",
+        "rank": 10,
+        "created_at": "2022-05-26T22:45:15.340Z",
+        "updated_at": "2022-05-26T22:45:15.340Z"
+    }
+},
+{
+    "model": "movies.review",
+    "pk": 3,
+    "fields": {
+        "movie": 30018,
+        "user": 3,
+        "content": "연기를 너무 잘해요",
+        "rank": 10,
+        "created_at": "2022-05-26T22:55:11.743Z",
+        "updated_at": "2022-05-26T22:55:11.743Z"
+    }
+},
+{
+    "model": "movies.review",
+    "pk": 4,
+    "fields": {
+        "movie": 299537,
+        "user": 4,
+        "content": "마블 짱짱!",
+        "rank": 10,
+        "created_at": "2022-05-26T22:59:33.129Z",
+        "updated_at": "2022-05-26T22:59:33.129Z"
+    }
+},
+{
+    "model": "movies.review",
+    "pk": 5,
+    "fields": {
+        "movie": 673,
+        "user": 5,
+        "content": "해리포터 말해뭐해~",
+        "rank": 10,
+        "created_at": "2022-05-26T23:02:36.236Z",
+        "updated_at": "2022-05-26T23:02:36.236Z"
+    }
+}
+]

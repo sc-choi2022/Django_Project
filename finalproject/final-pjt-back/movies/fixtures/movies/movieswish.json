@@ -1,0 +1,98 @@
+[
+{
+    "model": "movies.movie_users_wish",
+    "pk": 1,
+    "fields": {
+        "movie": 772,
+        "user": 1
+    }
+},
+{
+    "model": "movies.movie_users_wish",
+    "pk": 2,
+    "fields": {
+        "movie": 260513,
+        "user": 1
+    }
+},
+{
+    "model": "movies.movie_users_wish",
+    "pk": 3,
+    "fields": {
+        "movie": 420818,
+        "user": 1
+    }
+},
+{
+    "model": "movies.movie_users_wish",
+    "pk": 4,
+    "fields": {
+        "movie": 12444,
+        "user": 3
+    }
+},
+{
+    "model": "movies.movie_users_wish",
+    "pk": 5,
+    "fields": {
+        "movie": 568124,
+        "user": 3
+    }
+},
+{
+    "model": "movies.movie_users_wish",
+    "pk": 6,
+    "fields": {
+        "movie": 330457,
+        "user": 3
+    }
+},
+{
+    "model": "movies.movie_users_wish",
+    "pk": 7,
+    "fields": {
+        "movie": 459151,
+        "user": 4
+    }
+},
+{
+    "model": "movies.movie_users_wish",
+    "pk": 8,
+    "fields": {
+        "movie": 400650,
+        "user": 4
+    }
+},
+{
+    "model": "movies.movie_users_wish",
+    "pk": 9,
+    "fields": {
+        "movie": 631843,
+        "user": 4
+    }
+},
+{
+    "model": "movies.movie_users_wish",
+    "pk": 10,
+    "fields": {
+        "movie": 497698,
+        "user": 5
+    }
+},
+{
+    "model": "movies.movie_users_wish",
+    "pk": 11,
+    "fields": {
+        "movie": 76338,
+        "user": 5
+    }
+},
+{
+    "model": "movies.movie_users_wish",
+    "pk": 12,
+    "fields": {
+        "movie": 10138,
+        "user": 5
+    }
+}
+]

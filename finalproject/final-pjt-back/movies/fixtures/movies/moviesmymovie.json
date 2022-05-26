@@ -1,0 +1,122 @@
+[
+{
+    "model": "movies.movie_users_mymovie",
+    "pk": 1,
+    "fields": {
+        "movie": 496243,
+        "user": 1
+    }
+},
+{
+    "model": "movies.movie_users_mymovie",
+    "pk": 2,
+    "fields": {
+        "movie": 77,
+        "user": 1
+    }
+},
+{
+    "model": "movies.movie_users_mymovie",
+    "pk": 3,
+    "fields": {
+        "movie": 530254,
+        "user": 1
+    }
+},
+{
+    "model": "movies.movie_users_mymovie",
+    "pk": 4,
+    "fields": {
+        "movie": 210577,
+        "user": 2
+    }
+},
+{
+    "model": "movies.movie_users_mymovie",
+    "pk": 5,
+    "fields": {
+        "movie": 44214,
+        "user": 2
+    }
+},
+{
+    "model": "movies.movie_users_mymovie",
+    "pk": 6,
+    "fields": {
+        "movie": 475557,
+        "user": 2
+    }
+},
+{
+    "model": "movies.movie_users_mymovie",
+    "pk": 7,
+    "fields": {
+        "movie": 419430,
+        "user": 3
+    }
+},
+{
+    "model": "movies.movie_users_mymovie",
+    "pk": 8,
+    "fields": {
+        "movie": 13855,
+        "user": 3
+    }
+},
+{
+    "model": "movies.movie_users_mymovie",
+    "pk": 9,
+    "fields": {
+        "movie": 10195,
+        "user": 3
+    }
+},
+{
+    "model": "movies.movie_users_mymovie",
+    "pk": 10,
+    "fields": {
+        "movie": 11104,
+        "user": 4
+    }
+},
+{
+    "model": "movies.movie_users_mymovie",
+    "pk": 11,
+    "fields": {
+        "movie": 359784,
+        "user": 4
+    }
+},
+{
+    "model": "movies.movie_users_mymovie",
+    "pk": 12,
+    "fields": {
+        "movie": 449563,
+        "user": 4
+    }
+},
+{
+    "model": "movies.movie_users_mymovie",
+    "pk": 13,
+    "fields": {
+        "movie": 475557,
+        "user": 5
+    }
+},
+{
+    "model": "movies.movie_users_mymovie",
+    "pk": 14,
+    "fields": {
+        "movie": 496243,
+        "user": 5
+    }
+},
+{
+    "model": "movies.movie_users_mymovie",
+    "pk": 15,
+    "fields": {
+        "movie": 372058,
+        "user": 5
+    }
+}
+]
