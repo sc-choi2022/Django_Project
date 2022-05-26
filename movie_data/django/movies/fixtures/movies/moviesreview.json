@@ -1,0 +1,62 @@
+[
+{
+    "model": "movies.review",
+    "pk": 1,
+    "fields": {
+        "movie": 77,
+        "user": 1,
+        "content": "메멘토",
+        "rank": 10,
+        "created_at": "2022-05-26T04:02:53.210Z",
+        "updated_at": "2022-05-26T04:02:53.210Z"
+    }
+},
+{
+    "model": "movies.review",
+    "pk": 3,
+    "fields": {
+        "movie": 530254,
+        "user": 3,
+        "content": "마녀",
+        "rank": 9,
+        "created_at": "2022-05-26T04:15:38.049Z",
+        "updated_at": "2022-05-26T04:15:38.049Z"
+    }
+},
+{
+    "model": "movies.review",
+    "pk": 4,
+    "fields": {
+        "movie": 1726,
+        "user": 4,
+        "content": "아이언맨",
+        "rank": 7,
+        "created_at": "2022-05-26T04:19:03.107Z",
+        "updated_at": "2022-05-26T04:19:03.107Z"
+    }
+},
+{
+    "model": "movies.review",
+    "pk": 5,
+    "fields": {
+        "movie": 674,
+        "user": 5,
+        "content": "해리포터",
+        "rank": 10,
+        "created_at": "2022-05-26T04:21:42.603Z",
+        "updated_at": "2022-05-26T04:21:42.603Z"
+    }
+},
+{
+    "model": "movies.review",
+    "pk": 6,
+    "fields": {
+        "movie": 77,
+        "user": 2,
+        "content": "메멘토3",
+        "rank": 9,
+        "created_at": "2022-05-26T04:25:29.120Z",
+        "updated_at": "2022-05-26T04:25:29.120Z"
+    }
+}
+]

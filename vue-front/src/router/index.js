@@ -18,6 +18,7 @@ import LoginView from '@/views/LoginView.vue'
 import LogoutView from '@/views/LogoutView.vue'
 import SignupView from '@/views/SignupView.vue'
 import ProfileView from '@/views/ProfileView.vue'
+import NotFound404 from '@/views/NotFound404.vue'
 
 Vue.use(VueRouter)
 
@@ -96,6 +97,15 @@ const routes = [
     path: '/community/articles/:articleId/edit',
     name: 'articleEdit',
     component: ArticleEditView
+  },
+  {
+    path: '/404',
+    name: 'NotFound404',
+    component: NotFound404
+  },
+  {
+    path: '*',
+    redirect: '/404'
   },
 ]
 

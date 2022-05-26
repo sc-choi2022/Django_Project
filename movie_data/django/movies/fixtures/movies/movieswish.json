@@ -1,0 +1,122 @@
+[
+{
+    "model": "movies.movie_users_wish",
+    "pk": 1,
+    "fields": {
+        "movie": 449563,
+        "user": 1
+    }
+},
+{
+    "model": "movies.movie_users_wish",
+    "pk": 2,
+    "fields": {
+        "movie": 420817,
+        "user": 1
+    }
+},
+{
+    "model": "movies.movie_users_wish",
+    "pk": 3,
+    "fields": {
+        "movie": 11104,
+        "user": 1
+    }
+},
+{
+    "model": "movies.movie_users_wish",
+    "pk": 4,
+    "fields": {
+        "movie": 568124,
+        "user": 2
+    }
+},
+{
+    "model": "movies.movie_users_wish",
+    "pk": 5,
+    "fields": {
+        "movie": 628466,
+        "user": 2
+    }
+},
+{
+    "model": "movies.movie_users_wish",
+    "pk": 6,
+    "fields": {
+        "movie": 537116,
+        "user": 2
+    }
+},
+{
+    "model": "movies.movie_users_wish",
+    "pk": 7,
+    "fields": {
+        "movie": 11104,
+        "user": 3
+    }
+},
+{
+    "model": "movies.movie_users_wish",
+    "pk": 8,
+    "fields": {
+        "movie": 420817,
+        "user": 3
+    }
+},
+{
+    "model": "movies.movie_users_wish",
+    "pk": 9,
+    "fields": {
+        "movie": 466282,
+        "user": 3
+    }
+},
+{
+    "model": "movies.movie_users_wish",
+    "pk": 10,
+    "fields": {
+        "movie": 109445,
+        "user": 4
+    }
+},
+{
+    "model": "movies.movie_users_wish",
+    "pk": 11,
+    "fields": {
+        "movie": 568124,
+        "user": 4
+    }
+},
+{
+    "model": "movies.movie_users_wish",
+    "pk": 12,
+    "fields": {
+        "movie": 511809,
+        "user": 4
+    }
+},
+{
+    "model": "movies.movie_users_wish",
+    "pk": 13,
+    "fields": {
+        "movie": 24428,
+        "user": 5
+    }
+},
+{
+    "model": "movies.movie_users_wish",
+    "pk": 14,
+    "fields": {
+        "movie": 524434,
+        "user": 5
+    }
+},
+{
+    "model": "movies.movie_users_wish",
+    "pk": 15,
+    "fields": {
+        "movie": 284053,
+        "user": 5
+    }
+}
+]
