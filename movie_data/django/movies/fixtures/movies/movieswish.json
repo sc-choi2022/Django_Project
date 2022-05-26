@@ -118,13 +118,5 @@
         "movie": 284053,
         "user": 5
     }
-},
-{
-    "model": "movies.movie_users_wish",
-    "pk": 25,
-    "fields": {
-        "movie": 254781,
-        "user": 1
-    }
 }
 ]
