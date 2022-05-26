@@ -1,9 +1,9 @@
 <template>
   <div>
     <div class="container color borderXwidth">
-      <router-link :to="{ name: 'movies' }">HOME</router-link>
       <router-link :to="{ name: 'articles' }">COMMUNITY</router-link>
       <router-link :to="{ name: 'recommend' }">RECOMMEND</router-link> 
+      <router-link :to="{ name: 'movies' }"><img src="@/assets/Logo0.png" alt=""></router-link>
       <router-link v-if="!isLoggedIn" :to="{ name: 'login' }">LOGIN</router-link>
       <router-link v-if="!isLoggedIn" :to="{ name: 'signup' }">SIGNUP</router-link>
       <router-link v-if="isLoggedIn" :to="{ name: 'logout' }">LOGOUT</router-link>
@@ -28,6 +28,13 @@
 
 <style scoped>
   @import 'https://fonts.googleapis.com/css?family=Raleway';
+  img {
+    -webkit-filter: drop-shadow(8px 8px 10px rgb(0, 0, 0));filter: drop-shadow(8px 8px 10px rgb(0, 0, 0));
+    
+  }
+  #app > div:nth-child(1) > div > a:nth-child(3) {
+    margin-left: 0;
+  }
   .color
   {
       background: linear-gradient(#141E30, #243B55);
@@ -43,6 +50,7 @@
     margin: 0 auto;
     padding: 2em;
     text-align: center;
+    align-content: center;
   }
 
   div.container a
