@@ -1,16 +1,13 @@
 <template>
   <div>
     <div class="container">
-      <h1>{{ article.title }}</h1>
-
-      <p>
-        content: {{ article.content }}
-      </p>
-      <p>
-        movie_title: {{ article.movie_title }}
-      </p>
-      <p>기사 작성일: {{ article.created_at }}</p>
-      <p>기사 수정일: {{ article.updated_at }}</p>
+      <div class="articledetail">
+        <div class="title padding-bottom--24">{{ article.title }}</div>
+        <div class="created_at">{{ article.created_at }}</div>
+        <div class="updated_at">{{ article.updated_at }}</div>
+        <div class="content">{{ article.content }}</div>
+        <div class="movie_title">{{ article.movie_title }}</div>
+      </div>
       
       <!-- Article Edit/Delete UI -->
       <div v-if="isAuthor">
@@ -70,5 +67,12 @@
 </script>
 
 <style>
+.padding-bottom--24 {
+  padding-bottom: 24px;
+}
 
+.container {
+    padding: 5rem 15rem;
+    background: rgba(128, 128, 128, 0.082);
+  }
 </style>
