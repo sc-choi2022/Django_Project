@@ -118,5 +118,21 @@
         "movie": 150540,
         "user": 5
     }
+},
+{
+    "model": "movies.movie_users_mymovie",
+    "pk": 20,
+    "fields": {
+        "movie": 466282,
+        "user": 1
+    }
+},
+{
+    "model": "movies.movie_users_mymovie",
+    "pk": 26,
+    "fields": {
+        "movie": 254781,
+        "user": 1
+    }
 }
 ]
