@@ -591,7 +591,10 @@
         "vote_average": 8.0,
         "vote_count": 1174,
         "users_mymovie": [],
-        "users_wish": []
+        "users_wish": [
+            1,
+            3
+        ]
     }
 },
 {
@@ -727,7 +730,9 @@
         "vote_average": 7.7,
         "vote_count": 26933,
         "users_mymovie": [],
-        "users_wish": []
+        "users_wish": [
+            5
+        ]
     }
 },
 {
@@ -1305,7 +1310,9 @@
         "vote_average": 7.3,
         "vote_count": 14248,
         "users_mymovie": [],
-        "users_wish": []
+        "users_wish": [
+            4
+        ]
     }
 },
 {
@@ -1491,7 +1498,10 @@
         "video": "1KGZtWbZtq8",
         "vote_average": 7.9,
         "vote_count": 17847,
-        "users_mymovie": [],
+        "users_mymovie": [
+            4,
+            5
+        ],
         "users_wish": []
     }
 },
@@ -1967,7 +1977,9 @@
         "video": "UI2opSniclI",
         "vote_average": 7.6,
         "vote_count": 18314,
-        "users_mymovie": [],
+        "users_mymovie": [
+            2
+        ],
         "users_wish": []
     }
 },
@@ -1984,7 +1996,9 @@
         "video": "xNcJ0lIDPkE",
         "vote_average": 7.4,
         "vote_count": 19036,
-        "users_mymovie": [],
+        "users_mymovie": [
+            1
+        ],
         "users_wish": []
     }
 },
@@ -2001,8 +2015,12 @@
         "video": "pxR6cKkPzNo",
         "vote_average": 7.6,
         "vote_count": 17656,
-        "users_mymovie": [],
-        "users_wish": []
+        "users_mymovie": [
+            2
+        ],
+        "users_wish": [
+            5
+        ]
     }
 },
 {
@@ -2120,7 +2138,9 @@
         "video": "F0kvfk1ghjA",
         "vote_average": 8.3,
         "vote_count": 24624,
-        "users_mymovie": [],
+        "users_mymovie": [
+            1
+        ],
         "users_wish": []
     }
 },
@@ -2205,7 +2225,9 @@
         "video": "1rRT7mpZkGw",
         "vote_average": 7.4,
         "vote_count": 18592,
-        "users_mymovie": [],
+        "users_mymovie": [
+            2
+        ],
         "users_wish": []
     }
 },
@@ -2630,7 +2652,9 @@
         "video": "a7lhOFMyF0c",
         "vote_average": 7.9,
         "vote_count": 1897,
-        "users_mymovie": [],
+        "users_mymovie": [
+            4
+        ],
         "users_wish": []
     }
 },
@@ -2834,7 +2858,9 @@
         "video": "wb5Y3FeYgEo",
         "vote_average": 6.5,
         "vote_count": 2853,
-        "users_mymovie": [],
+        "users_mymovie": [
+            5
+        ],
         "users_wish": []
     }
 },
@@ -2868,7 +2894,9 @@
         "video": "y2AAVYBwgyg",
         "vote_average": 8.2,
         "vote_count": 6832,
-        "users_mymovie": [],
+        "users_mymovie": [
+            5
+        ],
         "users_wish": []
     }
 },
@@ -2937,7 +2965,10 @@
         "vote_average": 7.1,
         "vote_count": 8584,
         "users_mymovie": [],
-        "users_wish": []
+        "users_wish": [
+            1,
+            3
+        ]
     }
 },
 {
@@ -3004,7 +3035,9 @@
         "video": "G7N0q51feFk",
         "vote_average": 6.9,
         "vote_count": 462,
-        "users_mymovie": [],
+        "users_mymovie": [
+            3
+        ],
         "users_wish": []
     }
 },
@@ -3226,7 +3259,9 @@
         "vote_average": 6.2,
         "vote_count": 3149,
         "users_mymovie": [],
-        "users_wish": []
+        "users_wish": [
+            1
+        ]
     }
 },
 {
@@ -3259,7 +3294,9 @@
         "video": "mI9oyFMUlfg",
         "vote_average": 7.4,
         "vote_count": 1879,
-        "users_mymovie": [],
+        "users_mymovie": [
+            1
+        ],
         "users_wish": []
     }
 },
@@ -3379,7 +3416,9 @@
         "vote_average": 7.7,
         "vote_count": 7560,
         "users_mymovie": [],
-        "users_wish": []
+        "users_wish": [
+            3
+        ]
     }
 },
 {
@@ -3480,7 +3519,9 @@
         "video": "zpTtTmHJRjk",
         "vote_average": 8.1,
         "vote_count": 1237,
-        "users_mymovie": [],
+        "users_mymovie": [
+            4
+        ],
         "users_wish": []
     }
 },
@@ -3616,7 +3657,9 @@
         "video": "kM2tIF48rz8",
         "vote_average": 7.4,
         "vote_count": 3811,
-        "users_mymovie": [],
+        "users_mymovie": [
+            3
+        ],
         "users_wish": []
     }
 },
@@ -3736,7 +3779,9 @@
         "vote_average": 7.2,
         "vote_count": 904,
         "users_mymovie": [],
-        "users_wish": []
+        "users_wish": [
+            4
+        ]
     }
 },
 {
@@ -3855,7 +3900,9 @@
         "vote_average": 7.1,
         "vote_count": 5599,
         "users_mymovie": [],
-        "users_wish": []
+        "users_wish": [
+            5
+        ]
     }
 },
 {
@@ -3957,7 +4004,9 @@
         "vote_average": 7.8,
         "vote_count": 1379,
         "users_mymovie": [],
-        "users_wish": []
+        "users_wish": [
+            2
+        ]
     }
 },
 {
@@ -4058,7 +4107,9 @@
         "video": "K5lMzrfU4Y0",
         "vote_average": 6.4,
         "vote_count": 172,
-        "users_mymovie": [],
+        "users_mymovie": [
+            3
+        ],
         "users_wish": []
     }
 },
@@ -4076,7 +4127,10 @@
         "vote_average": 7.7,
         "vote_count": 6510,
         "users_mymovie": [],
-        "users_wish": []
+        "users_wish": [
+            2,
+            4
+        ]
     }
 },
 {
@@ -4467,7 +4521,9 @@
         "vote_average": 6.3,
         "vote_count": 3,
         "users_mymovie": [],
-        "users_wish": []
+        "users_wish": [
+            2
+        ]
     }
 },
 {
@@ -4791,6 +4847,66 @@
         "vote_count": 372,
         "users_mymovie": [],
         "users_wish": []
+    }
+},
+{
+    "model": "movies.review",
+    "pk": 1,
+    "fields": {
+        "movie": 77,
+        "user": 1,
+        "content": "메멘토",
+        "rank": 10,
+        "created_at": "2022-05-26T04:02:53.210Z",
+        "updated_at": "2022-05-26T04:02:53.210Z"
+    }
+},
+{
+    "model": "movies.review",
+    "pk": 3,
+    "fields": {
+        "movie": 530254,
+        "user": 3,
+        "content": "마녀",
+        "rank": 9,
+        "created_at": "2022-05-26T04:15:38.049Z",
+        "updated_at": "2022-05-26T04:15:38.049Z"
+    }
+},
+{
+    "model": "movies.review",
+    "pk": 4,
+    "fields": {
+        "movie": 1726,
+        "user": 4,
+        "content": "아이언맨",
+        "rank": 7,
+        "created_at": "2022-05-26T04:19:03.107Z",
+        "updated_at": "2022-05-26T04:19:03.107Z"
+    }
+},
+{
+    "model": "movies.review",
+    "pk": 5,
+    "fields": {
+        "movie": 674,
+        "user": 5,
+        "content": "해리포터",
+        "rank": 10,
+        "created_at": "2022-05-26T04:21:42.603Z",
+        "updated_at": "2022-05-26T04:21:42.603Z"
+    }
+},
+{
+    "model": "movies.review",
+    "pk": 6,
+    "fields": {
+        "movie": 77,
+        "user": 2,
+        "content": "메멘토3",
+        "rank": 9,
+        "created_at": "2022-05-26T04:25:29.120Z",
+        "updated_at": "2022-05-26T04:25:29.120Z"
     }
 },
 {
