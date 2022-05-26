@@ -2,7 +2,6 @@
   <div>
     <div class="container">
       <h1>Login</h1>
-      <account-error-list v-if="authError"></account-error-list>
       <form @submit.prevent="login(credentials)">
         <div class="login-form">
           <input v-model="credentials.username" type="text" id="username" class="login-username" autofocus="true" required="true" placeholder="Username" />
@@ -10,18 +9,19 @@
           <input type="submit" name="Login" value="Login" class="login-submit" />
         </div>
       </form>
+      <account-error-list v-if="authError"></account-error-list>
     </div>
   </div>
 </template>
 
 <script>
   import { mapActions, mapGetters } from 'vuex'
-  // import AccountErrorList from '@/components/AccountErrorList.vue'
+  import AccountErrorList from '@/components/AccountErrorList.vue'
 
   export default {
     name: 'LoginView',
     components: {
-      // AccountErrorList,
+      AccountErrorList,
     },
     data() {
       return {

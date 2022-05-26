@@ -2,7 +2,6 @@
   <div>
     <div class="container">
       <h1>Signup</h1>
-      <!-- <account-error-list v-if="authError"></account-error-list> -->
       <form @submit.prevent="signup(credentials)">
         <div class="signup-form">
           <input v-model="credentials.username" type="text" id="username" class="signup-username" autofocus="true" required="true" placeholder="Write Username" />
@@ -11,18 +10,19 @@
           <input type="submit" name="signup" value="signup" class="signup-submit" />
         </div>
       </form>
+      <account-error-list v-if="authError"></account-error-list>
     </div>
   </div>
 </template>
 
 <script>
   import { mapActions, mapGetters } from 'vuex'
-  // import AccountErrorList from '@/components/AccountErrorList.vue'
+  import AccountErrorList from '@/components/AccountErrorList.vue'
 
   export default {
     name: 'SignupView',
     components: {
-      // AccountErrorList,
+      AccountErrorList,
     },
     data() {
       return {

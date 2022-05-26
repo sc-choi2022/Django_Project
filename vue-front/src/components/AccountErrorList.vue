@@ -1,14 +1,8 @@
 <template>
   <div class="account-error-list">
-    <p v-for="(errors, field) in authError" :key="field">
-      {{ field }}
-      <ul>
-        <li v-for="(error, idx) in errors" :key="idx">
-          {{ error }}
-        </li>
-      </ul>
-    </p>
-
+    {{ authError['username'] }}
+    {{ authError['password1'] }}
+    {{ authError['non_field_errors'] }}
   </div>
 </template>
 

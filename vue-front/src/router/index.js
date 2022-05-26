@@ -118,6 +118,7 @@ const router = new VueRouter({
 router.beforeEach((to, from, next) => {
   // 로그인 여부 확인 (Vuex 사용 시)
   const { isLoggedIn } = store.getters
+  store.commit('SET_AUTH_ERROR','')
 
   // Auth가 필요없는 route의 name
   const noAuthPages = ['login', 'signup', 'movies']
@@ -127,7 +128,7 @@ router.beforeEach((to, from, next) => {
 
   // Auth가 필요한데, 로그인되어 있지 않다면?
   if (isAuthRequired && !isLoggedIn) {
-    alert('Require Login. Redirecting..')
+    alert('로그인이 필요한 페이지입니다.')
     // 로그인 페이지로 이동
     next({ name: 'login' , query : { next: to.path }})
   } else {

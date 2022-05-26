@@ -53,7 +53,7 @@ export default {
           router.push(nextroute || { name :'movies'})
         })
         .catch(err => {
-          console.error(err.response.data)
+          // console.error(err.response.data)
           commit('SET_AUTH_ERROR', err.response.data)
         })
     },
@@ -71,6 +71,16 @@ export default {
           router.push({ name: 'movies' })
         })
         .catch(err => {
+          console.log(err)
+          if ('password1' in err.response.data) {
+            err.response.data.password1 = "비밀번호는 8자리 이상이어야 합니다."
+          } 
+          if ('username' in err.response.data) {
+            err.response.data.username = "이미 사용중인 유저이름입니다."
+          } 
+          if ('non_field_errors' in err.response.data ){
+            err.response.data.non_field_errors = "두 비밀번호가 일치하지 않습니다."
+          }
           console.error(err.response.data)
           commit('SET_AUTH_ERROR', err.response.data)
         })
