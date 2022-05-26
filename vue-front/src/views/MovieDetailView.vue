@@ -1,8 +1,10 @@
 <template>
   <div>
     <div class="container">
+      <div class="moviedetail">
+        
+      </div>
       <h1>{{ movie.title }}</h1>
-      <movie-comment-list :reviews="movie.reviews"></movie-comment-list>
 
       <p>overview: {{ movie.overview }}</p>
       <p>runtime: {{ movie.runtime }}</p>
@@ -40,6 +42,7 @@
         >wish</button>
       </div>
 
+      <movie-comment-list :reviews="movie.reviews"></movie-comment-list>
     </div>  
   </div>
 </template>

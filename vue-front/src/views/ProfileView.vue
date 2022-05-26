@@ -76,11 +76,13 @@ export default {
     text-align: left;
     text-decoration: underline overline;
     margin: 0;
+    text-shadow: 4px 4px 0px #bdbdbd;
   }
   .container .movietype {
     font-weight: 800;
     font-size: 50px;
     margin: 0;
+    /* text-shadow: -1px 0 #bdbdbd, 0 1px #bdbdbd, 1px 0 #bdbdbd, 0 -1px #bdbdbd; */
   }
   .gallery {
     display: grid;
