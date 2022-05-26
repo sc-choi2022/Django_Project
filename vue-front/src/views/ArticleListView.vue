@@ -1,29 +1,23 @@
 <template>
   <div>
     <div class="container">
-      <h1>Community</h1>
-          <router-link :to="{ name: 'articleNew' }" v-if="isLoggedIn">
-            <button>New</button>
-          </router-link>
-      <ul>
-        <li v-for="article in articles" :key="article.id">
-          <!-- 작성자 -->
-          username: {{ article.user.username }}  |
-          title: {{ article.title }}  |
-          movie_title: {{ article.movie_title }} 
-
-          <!-- 글 이동 링크 (제목) -->
-          <router-link 
-            :to="{ name: 'article', params: {articleId: article.id} }">
-            {{ article.title }}
-          </router-link>
-
-          <!-- 댓글 개수/좋아요 개수 -->
-          =>
-          댓글 개수: {{ article.comment_count }} | 좋아요 개수: {{ article.like_count }}
-
-        </li>
-      </ul>
+      <div>
+        <h1>Community</h1>
+        <router-link :to="{ name: 'articleNew' }" v-if="isLoggedIn">
+          <button v-if="currentUser.email">New</button>
+        </router-link>
+      </div>
+      <div class="articles" v-for="article in articles" :key="article.id">
+        [{{ article.movie_title }}]
+        {{ currentUser }}
+        <!-- username: {{ article.user.username }}  <br> -->
+        <router-link 
+          :to="{ name: 'article', params: {articleId: article.id} }">
+          {{ article.title }}
+        </router-link>
+        <font-awesome-icon icon="fa-solid fa-heart" color="#ff78ae" />{{ article.like_count }}
+        <font-awesome-icon icon="fa-solid fa-feather" color="#808080" />{{ article.comment_count }} <hr>
+      </div>
     </div>
   </div>
 </template>
@@ -34,7 +28,7 @@
   export default {
     name: 'ArticleList',
     computed: {
-      ...mapGetters(['articles', 'isLoggedIn'])
+      ...mapGetters(['articles', 'isLoggedIn', 'currentUser'])
     },
     methods: {
       ...mapActions(['fetchArticles'])
@@ -45,4 +39,16 @@
   }
 </script>
 
-<style></style>
+<style scoped>
+  .container {
+    padding: 5rem 20rem;
+  }
+  .articles {
+    text-align: left;
+  }
+  a {
+    text-decoration:none;
+    color: black;
+    font-weight: 800;
+  }
+</style>

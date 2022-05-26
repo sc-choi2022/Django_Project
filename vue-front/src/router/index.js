@@ -120,7 +120,7 @@ router.beforeEach((to, from, next) => {
   const { isLoggedIn } = store.getters
 
   // Auth가 필요없는 route의 name
-  const noAuthPages = ['login', 'signup', 'movies', 'articles']
+  const noAuthPages = ['login', 'signup', 'movies']
 
   // 현재 이동하고자 하는 페이지가 Auth가 필요한가?
   const isAuthRequired = !noAuthPages.includes(to.name)

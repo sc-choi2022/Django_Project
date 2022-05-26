@@ -85,6 +85,10 @@ export default {
             params: { articleId: getters.article.id }
           })
         })
+        .catch(() => {
+          alert('글을 쓸 수 있는 권한이 없습니다.')
+          router.push({ name: 'community' })
+        })
     },
 
     updateArticle({ commit, getters }, { id, title, content, movie_title, }) {
