@@ -1,5 +1,6 @@
 <template>
   <div class="comment-list-item">
+<<<<<<< HEAD
     <div class="board">
       <div class ='first'>
         <router-link :to="{ name: 'profile', params: { username: comment.user.username } }">
@@ -16,6 +17,16 @@
         <span v-if="!isEditing">댓글 수정일: {{ payload.updated_at }}</span>
       </div>
     </div>
+=======
+    <router-link :to="{ name: 'profile', params: { username: comment.user.username } }">
+      {{ comment.user.username }}
+    </router-link>: 
+    
+    <span v-if="!isEditing">{{ payload.content }}</span>
+    <br>
+    <span v-if="!isEditing">댓글 작성일: {{ payload.created_at }}</span> |  
+    <span v-if="!isEditing">댓글 수정일: {{ payload.updated_at }}</span>
+>>>>>>> 5a084e16b0aa12eeab8551a7119b3f908c6196eb
 
     <span v-if="isEditing">
       <input type="text" v-model="payload.content">

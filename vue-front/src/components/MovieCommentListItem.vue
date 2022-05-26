@@ -1,14 +1,14 @@
 <template>
-  <li class="movie-comment-list-item">
-    <!-- <router-link :to="{ name: 'profile', params: { username: review.user.username } }">
-    </router-link>:  -->
-      {{ review.user.username }}
-    
-    <span v-if="!isEditing">{{ payload.content }}</span>
-    <span v-if="!isEditing">{{ payload.rank }}</span>
-    <br>
-    <span v-if="!isEditing">댓글 작성일: {{ payload.created_at }}</span> |  
-    <span v-if="!isEditing">댓글 수정일: {{ payload.updated_at }}</span>
+  <div class="movie-comment-list-item">
+    <span v-if="!isEditing">{{ payload.content }} 
+      <span v-if="payload.rank === 2"><font-awesome-icon icon="fa-solid fa-star" /></span>
+      <span v-if="payload.rank === 4"><font-awesome-icon icon="fa-solid fa-star" /><font-awesome-icon icon="fa-solid fa-star" /></span>
+      <span v-if="payload.rank === 6"><font-awesome-icon icon="fa-solid fa-star" /><font-awesome-icon icon="fa-solid fa-star" /><font-awesome-icon icon="fa-solid fa-star" /></span>
+      <span v-if="payload.rank === 8"><font-awesome-icon icon="fa-solid fa-star" /><font-awesome-icon icon="fa-solid fa-star" /><font-awesome-icon icon="fa-solid fa-star" /><font-awesome-icon icon="fa-solid fa-star" /></span>
+      <span v-if="payload.rank === 10"><font-awesome-icon icon="fa-solid fa-star" /><font-awesome-icon icon="fa-solid fa-star" /><font-awesome-icon icon="fa-solid fa-star" /><font-awesome-icon icon="fa-solid fa-star" /><font-awesome-icon icon="fa-solid fa-star" /></span>
+      {{ payload.updated_at }}</span>
+    <br>  
+    <span v-if="!isEditing"></span>
 
     <span v-if="isEditing">
       <input type="text" v-model="payload.content">
@@ -21,7 +21,7 @@
       <button @click="switchIsEditing">Edit</button> |
       <button @click="deleteReview(payload)">Delete</button>
     </span>
-  </li>
+  </div>
 </template>
 
 <script>
