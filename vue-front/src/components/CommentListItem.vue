@@ -1,5 +1,5 @@
 <template>
-  <li class="comment-list-item">
+  <div class="comment-list-item">
     <router-link :to="{ name: 'profile', params: { username: comment.user.username } }">
       {{ comment.user.username }}
     </router-link>: 
@@ -19,7 +19,7 @@
       <button @click="switchIsEditing">Edit</button> |
       <button @click="deleteComment(payload)">Delete</button>
     </span>
-  </li>
+  </div>
 </template>
 
 <script>

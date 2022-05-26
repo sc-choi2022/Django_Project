@@ -6,11 +6,8 @@
           <img :src="cardUrl + movie.poster_path" alt="movie_poster">
         </div>
         <div class="movietext1">
-          <h1>{{ movie.title }} 
-            <span v-if="movie.certifications[0]['name']='ALL'" style="color:green">{{ movie.certifications[0]['name'] }}
-            </span>
-          </h1>
-          <p>{{ movie.runtime }} min 개봉일 {{ movie.release_date.slice(0,10) }} </p>
+          <h1>{{ movie.title }}</h1>
+          <p>{{ movie.runtime }} min 개봉일 {{ movie.release_date }} </p>
           <p>감독 {{ movie.directors[0]['name'] }}</p>
           <p> 
             <span>{{ movie.genres[0].name }} </span> 
@@ -44,33 +41,76 @@
         <div class="actor2">
           <img :src="cardUrl1 + movie.actors[2].profile_path" alt="actors">
         </div>
+        <div class="movietext3">
+          {{ movie.overview }}
+        </div>
+        <div class="otts" v-if="movie.otts.length === 1">
+          <span v-if="movie.otts[0]['id'] === 8">
+            <a href="https://www.netflix.com/kr/">
+            <img class="thumnail" src="https://w.namu.la/s/08cf9640d5b9e25e2901375f21e3794c9f79e0c4930c5f697cacca22ec454184e410ad955dd997cccaf7e15ad0d7ee8d8976fe767505159c90513b78764543bec07bc8a4b9cf87217ebcb1db11d0ba81db10fe022311d293ed443336b28508c4" alt=""></a>
+          </span>
+          <span v-if="movie.otts[0]['id'] === 97">
+            <a href="https://watcha.com/">
+            <img class="thumnail" src="https://w.namu.la/s/806795f01bfdb99ee07ef5ed4d26c7a76ce99bddf229f51418d040f4387944e4e06d19bcbd84da2a179de6273e3ca30f084aabc97154fb91a2f167ee349cec6d6e3c4db1abb00949ce2523d61074442a389fffadb69a3030b85c5168be94f968" alt=""></a>
+          </span>
+          <span v-if="movie.otts[0]['id'] === 337">
+            <a href="https://www.disneyplus.com/ko-kr/welcome/stream-now">
+            <img class="thumnail" src="https://w.namu.la/s/e53fcef546cc1b3f510694f331690215c764c0672c35dd34d207f29ed51c38de36e9f57e5bdd2ee05df77b4c1731d4ce840d3990860b959d27dc073339f94f0705d5bb2a4295a17b8911c5f6d31384752c47dedbd5d7f51bfec4db459a7e6f4b" alt=""></a>
+          </span>
+        </div>
+        <div class="otts" v-if="movie.otts.length === 2">
+          <span v-if="movie.otts[0]['id'] === 8">
+            <a href="https://www.netflix.com/kr/">
+            <img class="thumnail" src="https://w.namu.la/s/08cf9640d5b9e25e2901375f21e3794c9f79e0c4930c5f697cacca22ec454184e410ad955dd997cccaf7e15ad0d7ee8d8976fe767505159c90513b78764543bec07bc8a4b9cf87217ebcb1db11d0ba81db10fe022311d293ed443336b28508c4" alt=""></a>
+          </span>
+          <span v-if="movie.otts[0]['id'] === 97">
+            <a href="https://watcha.com/">
+            <img class="thumnail" src="https://w.namu.la/s/806795f01bfdb99ee07ef5ed4d26c7a76ce99bddf229f51418d040f4387944e4e06d19bcbd84da2a179de6273e3ca30f084aabc97154fb91a2f167ee349cec6d6e3c4db1abb00949ce2523d61074442a389fffadb69a3030b85c5168be94f968" alt=""></a>
+          </span>
+          <span v-if="movie.otts[0]['id'] === 337">
+            <a href="https://www.disneyplus.com/ko-kr/welcome/stream-now">
+            <img class="thumnail" src="https://w.namu.la/s/e53fcef546cc1b3f510694f331690215c764c0672c35dd34d207f29ed51c38de36e9f57e5bdd2ee05df77b4c1731d4ce840d3990860b959d27dc073339f94f0705d5bb2a4295a17b8911c5f6d31384752c47dedbd5d7f51bfec4db459a7e6f4b" alt=""></a>
+          </span>
+          <span v-if="movie.otts[1]['id'] === 8">
+            <a href="https://www.netflix.com/kr/">
+            <img class="thumnail" src="https://w.namu.la/s/08cf9640d5b9e25e2901375f21e3794c9f79e0c4930c5f697cacca22ec454184e410ad955dd997cccaf7e15ad0d7ee8d8976fe767505159c90513b78764543bec07bc8a4b9cf87217ebcb1db11d0ba81db10fe022311d293ed443336b28508c4" alt=""></a>
+          </span>
+          <span v-if="movie.otts[1]['id'] === 97">
+            <a href="https://watcha.com/">
+            <img class="thumnail" src="https://w.namu.la/s/806795f01bfdb99ee07ef5ed4d26c7a76ce99bddf229f51418d040f4387944e4e06d19bcbd84da2a179de6273e3ca30f084aabc97154fb91a2f167ee349cec6d6e3c4db1abb00949ce2523d61074442a389fffadb69a3030b85c5168be94f968" alt=""></a>
+          </span>
+          <span v-if="movie.otts[1]['id'] === 337">
+            <a href="https://www.disneyplus.com/ko-kr/welcome/stream-now">
+            <img class="thumnail" src="https://w.namu.la/s/e53fcef546cc1b3f510694f331690215c764c0672c35dd34d207f29ed51c38de36e9f57e5bdd2ee05df77b4c1731d4ce840d3990860b959d27dc073339f94f0705d5bb2a4295a17b8911c5f6d31384752c47dedbd5d7f51bfec4db459a7e6f4b" alt=""></a>
+          </span>
+        </div>
+        <div class="otts" v-if="movie.otts.length === 3">
+          <span>
+            <a href="https://www.netflix.com/kr/">
+            <img class="thumnail" src="https://w.namu.la/s/08cf9640d5b9e25e2901375f21e3794c9f79e0c4930c5f697cacca22ec454184e410ad955dd997cccaf7e15ad0d7ee8d8976fe767505159c90513b78764543bec07bc8a4b9cf87217ebcb1db11d0ba81db10fe022311d293ed443336b28508c4" alt=""></a>
+          </span>
+          <span>
+            <a href="https://watcha.com/">
+            <img class="thumnail" src="https://w.namu.la/s/806795f01bfdb99ee07ef5ed4d26c7a76ce99bddf229f51418d040f4387944e4e06d19bcbd84da2a179de6273e3ca30f084aabc97154fb91a2f167ee349cec6d6e3c4db1abb00949ce2523d61074442a389fffadb69a3030b85c5168be94f968" alt=""></a>
+          </span>
+          <span>
+            <a href="https://www.disneyplus.com/ko-kr/welcome/stream-now">
+            <img class="thumnail" src="https://w.namu.la/s/e53fcef546cc1b3f510694f331690215c764c0672c35dd34d207f29ed51c38de36e9f57e5bdd2ee05df77b4c1731d4ce840d3990860b959d27dc073339f94f0705d5bb2a4295a17b8911c5f6d31384752c47dedbd5d7f51bfec4db459a7e6f4b" alt=""></a>
+          </span>
+        </div>
+        <div class="personalmovie">
+          <h4>이 영화를 관람한 사람 {{ movie.users_mymovie.length }}</h4>
+          <h4>이 영화를 표시한 사람 {{ movie.users_wish.length }}</h4>
+        </div>
+        <div class="personalicon">
+          <h3 @click="myMovie(movieId)"><font-awesome-icon icon="fa-solid fa-person" /></h3>
+          <h3 @click="wish(movieId)"><font-awesome-icon icon="fa-solid fa-face-grin-stars" /></h3>
+        </div>
+        <div class="comments">
+          <movie-comment-list :reviews="movie.reviews"></movie-comment-list>
+        </div>
       </div>
-
-      <!-- MTM field
-      <p>certifications: {{ movie.certifications }}</p>
-      <p></p>
-
-      user_id 출력된다
-      <p>users_mymovie: {{ movie.users_mymovie }}</p>
-      <p>users_wish: {{ movie.users_wish }}</p>
-
-
-      Article Like UI
-      <div>
-        Mymovie:
-        <button
-          @click="myMovie(movieId)"
-        >myMovie</button>
-      </div>
-
-      <div>
-        wish:
-        <button
-          @click="wish(movieId)"
-        >wish</button>
-      </div> -->
-
-      <movie-comment-list :reviews="movie.reviews"></movie-comment-list>
+        
     </div>  
   </div>
 </template>
@@ -175,5 +215,46 @@
   }
   .vote {
     color: #ffcc00;
+  }
+  .movietext3{
+    text-align: left;
+    grid-column-start: 5;
+    grid-column-end: 13;
+    grid-row-start: 8;
+    grid-row-end: 9;     
+  }
+  .thumnail {
+    border-radius: 4px;  /* Rounded border */
+    padding: 5px; /* Some padding */
+    height: 5rem;
+  }
+  .otts{
+    text-align: right;
+    grid-column-start: 5;
+    grid-column-end: 12;
+    grid-row-start: 10;
+    grid-row-end: 13;   
+  }
+  .personalmovie{
+    text-align: left;
+    grid-column-start: 5;
+    grid-column-end: 10;
+    grid-row-start: 7;
+    grid-row-end: 8;    
+  }
+  .personalicon{
+    color: #ffcc00;
+    text-align: left;
+    grid-column-start: 8;
+    grid-column-end: 10;
+    grid-row-start: 7;
+    grid-row-end: 8;    
+  }
+  .comments{
+    text-align: left;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 9;
+    grid-row-end: 11;    
   }
 </style>
