@@ -1807,12 +1807,8 @@
         "video": "k8cQW2ygzjU",
         "vote_average": 6.9,
         "vote_count": 25,
-        "users_mymovie": [
-            1
-        ],
-        "users_wish": [
-            1
-        ]
+        "users_mymovie": [],
+        "users_wish": []
     }
 },
 {
@@ -3419,9 +3415,7 @@
         "video": "5jLaZuLap50",
         "vote_average": 7.7,
         "vote_count": 7560,
-        "users_mymovie": [
-            1
-        ],
+        "users_mymovie": [],
         "users_wish": [
             3
         ]
@@ -4857,6 +4851,18 @@
 },
 {
     "model": "movies.review",
+    "pk": 1,
+    "fields": {
+        "movie": 77,
+        "user": 1,
+        "content": "메멘토",
+        "rank": 10,
+        "created_at": "2022-05-26T04:02:53.210Z",
+        "updated_at": "2022-05-26T04:02:53.210Z"
+    }
+},
+{
+    "model": "movies.review",
     "pk": 3,
     "fields": {
         "movie": 530254,
@@ -4901,54 +4907,6 @@
         "rank": 9,
         "created_at": "2022-05-26T04:25:29.120Z",
         "updated_at": "2022-05-26T04:25:29.120Z"
-    }
-},
-{
-    "model": "movies.review",
-    "pk": 7,
-    "fields": {
-        "movie": 359784,
-        "user": 1,
-        "content": "고장난 론",
-        "rank": 10,
-        "created_at": "2022-05-26T15:26:54.296Z",
-        "updated_at": "2022-05-26T15:26:54.296Z"
-    }
-},
-{
-    "model": "movies.review",
-    "pk": 8,
-    "fields": {
-        "movie": 359784,
-        "user": 1,
-        "content": "고장난 론",
-        "rank": 10,
-        "created_at": "2022-05-26T15:35:16.537Z",
-        "updated_at": "2022-05-26T15:35:16.537Z"
-    }
-},
-{
-    "model": "movies.review",
-    "pk": 9,
-    "fields": {
-        "movie": 359784,
-        "user": 1,
-        "content": "df",
-        "rank": 8,
-        "created_at": "2022-05-26T15:35:22.142Z",
-        "updated_at": "2022-05-26T15:35:22.142Z"
-    }
-},
-{
-    "model": "movies.review",
-    "pk": 11,
-    "fields": {
-        "movie": 372058,
-        "user": 1,
-        "content": "카미키류노스케",
-        "rank": 4,
-        "created_at": "2022-05-26T15:58:39.139Z",
-        "updated_at": "2022-05-26T15:58:39.139Z"
     }
 },
 {
